@@ -8,11 +8,13 @@
 
 #import <Foundation/Foundation.h>
 #import "MXNetwork.h"
+#import "MXUser.h"
 
 @protocol MXSessionDelegete <NSObject>
 
 - (void)sessionDidLoggedIn;
 - (void)sessionDidFailedLoginWithError:(NSError *)error;
+- (void)sessionDIDLogout;
 
 @end
 
@@ -22,8 +24,9 @@ NS_ASSUME_NONNULL_BEGIN
 
 @property (nonatomic, readonly, nonnull) MXNetwork *network;
 @property (nonatomic, weak) id<MXSessionDelegete> delegate;
+@property (nonatomic, readonly) MXUser *user;
 
-- (void)login;
+- (void)loginWithUser:(MXUser *)user;
 - (void)logout;
 
 @end

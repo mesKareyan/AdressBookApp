@@ -6,17 +6,20 @@
 //  Copyright © 2018 Mesrop Kareyan. All rights reserved.
 //
 
-#import "ViewController.h"
+#import "MXLoginViewController.h"
+#import "MXSession.h"
 
-@interface ViewController ()
+@interface MXLoginViewController ()
+
+@property (nonatomic) MXSession *session;
 
 @end
 
-@implementation ViewController
+@implementation MXLoginViewController
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    // Do any additional setup after loading the view, typically from a nib.
+    self.session 
 }
 
 

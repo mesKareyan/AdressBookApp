@@ -9,6 +9,12 @@
 #import "MXSession.h"
 #import <UICKeyChainStore/UICKeyChainStore.h>
 
+@interface MXSession()
+
+@property (nonatomic, readwrite) MXUser *user;
+
+@end
+
 @implementation MXSession
 
 - (instancetype)init
@@ -20,16 +26,18 @@
     return self;
 }
 
-- (void)loginWithUser:(MXUser *)user {
+- (MXUser *)savedUser {
     UICKeyChainStore *keychain = [UICKeyChainStore keyChainStoreWithService:@"com.mesropK.AdressBook"];
     NSString *keychainUser = keychain[@"user"];
-    if (!keychainUser) {
-        [self loginWithUser:user.name password:user.password];
-    } else {
-        dispatch_async(dispatch_get_main_queue(), ^{
-            [self.delegate sessionDidLoggedIn];
-        });
+    NSString *keychainPass = keychain[@"password"];
+    if (keychainUser && keychainPass) {
+        return [[MXUser alloc] initWithName:keychainUser password:keychainPass];
     }
+    return nil;
+}
+
+- (void)loginWithUser:(MXUser *)user {
+    [self loginWithUser:user.name password:user.password];
 }
 
 - (void)loginWithUser:(NSString *)user password:(NSString *)password {
@@ -45,6 +53,7 @@
             keychain[@"password"] = password;
             keychain[@"user"] = user;
             dispatch_async(dispatch_get_main_queue(), ^{
+                self.user = [[MXUser alloc] initWithName:user password:password];
                 [self.delegate sessionDidLoggedIn];
             });
         }
@@ -56,7 +65,7 @@
                                   keyChainStoreWithService:@"com.mesropK.AdressBook"];
     keychain[@"password"] = nil;
     keychain[@"user"] = nil;
-    [self.delegate sessionDIDLogout];
+    [self.delegate sessionDidLogout];
 }
 
 @end

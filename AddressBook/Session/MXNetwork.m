@@ -46,8 +46,8 @@ NSString *const MXErrorDomain = @"com.mesrop.addressbookpp";
     
     NSURLComponents *components = [NSURLComponents componentsWithString:
                                    [baseApi stringByAppendingString: loginEndpoint]];
-    NSURLQueryItem *user = [NSURLQueryItem queryItemWithName:@"user" value:userName];
-    NSURLQueryItem *pass = [NSURLQueryItem queryItemWithName:@"pass" value:password];
+    NSURLQueryItem *user = [NSURLQueryItem queryItemWithName:@"login" value:userName];
+    NSURLQueryItem *pass = [NSURLQueryItem queryItemWithName:@"password" value:password];
     components.queryItems = @[user, pass];
     
     [[self.session dataTaskWithURL: components.URL
@@ -71,11 +71,12 @@ NSString *const MXErrorDomain = @"com.mesrop.addressbookpp";
                          return;
                      }
                      NSDictionary *resultDict = (NSDictionary *)result;
-                     if(!resultDict[@"Success"]) {
-                         completion([self loginErrorWithMessesge: resultDict[@"message"]]);
+                     if([resultDict[@"Success"] boolValue]) {
+                         completion(nil);
+                     } else {
+                         completion([self loginErrorWithMessesge: resultDict[@"Message"]]);
                          return;
                      }
-                     completion(nil);
                  }] resume];
 }
 
@@ -128,9 +129,12 @@ NSString *const MXErrorDomain = @"com.mesrop.addressbookpp";
 #pragma mark - Helpers
 
 - (NSError *)loginErrorWithMessesge:(NSString *)messege {
+    if (messege == nil) {
+        messege = @"Ошибка входа";
+    }
     return  [NSError errorWithDomain:MXErrorDomain
                                 code:MXErrorNotLoggedIn
-                            userInfo: @{NSLocalizedDescriptionKey : @"Ошибка входа"}];
+                            userInfo: @{NSLocalizedDescriptionKey : messege }];
 }
 
 @end

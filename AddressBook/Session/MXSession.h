@@ -14,7 +14,7 @@
 
 - (void)sessionDidLoggedIn;
 - (void)sessionDidFailedLoginWithError:(NSError *)error;
-- (void)sessionDIDLogout;
+- (void)sessionDidLogout;
 
 @end
 
@@ -26,6 +26,7 @@ NS_ASSUME_NONNULL_BEGIN
 @property (nonatomic, weak) id<MXSessionDelegete> delegate;
 @property (nonatomic, readonly) MXUser *user;
 
+- (MXUser *)savedUser;
 - (void)loginWithUser:(MXUser *)user;
 - (void)logout;
 

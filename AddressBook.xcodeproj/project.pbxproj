@@ -8,20 +8,32 @@
 
 /* Begin PBXBuildFile section */
 		64D23560632C5771E2EF6CF9 /* libPods-AdressBook.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 6A4861B48292501AD2338EAC /* libPods-AdressBook.a */; };
+		B24DAA052152CEE300E254F7 /* Launch Screen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B24DAA042152CEE300E254F7 /* Launch Screen.storyboard */; };
+		B268DDA221524E9A00AFD142 /* MXLoginViewController+TextFiledDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = B268DDA121524E9A00AFD142 /* MXLoginViewController+TextFiledDelegate.m */; };
+		B268DDA62152551100AFD142 /* EmployeeListViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B268DDA52152551100AFD142 /* EmployeeListViewController.m */; };
 		B27DE03D2151627600CC1359 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = B27DE03C2151627600CC1359 /* AppDelegate.m */; };
 		B27DE0402151627600CC1359 /* MXLoginViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B27DE03F2151627600CC1359 /* MXLoginViewController.m */; };
 		B27DE0432151627600CC1359 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B27DE0412151627600CC1359 /* Main.storyboard */; };
 		B27DE0482151627A00CC1359 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B27DE0472151627A00CC1359 /* Assets.xcassets */; };
-		B27DE04B2151627A00CC1359 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B27DE0492151627A00CC1359 /* LaunchScreen.storyboard */; };
 		B27DE04E2151627A00CC1359 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = B27DE04D2151627A00CC1359 /* main.m */; };
 		B27DE0572151644600CC1359 /* MXNetwork.m in Sources */ = {isa = PBXBuildFile; fileRef = B27DE0562151644600CC1359 /* MXNetwork.m */; };
 		B27DE05A2151765900CC1359 /* MXSession.m in Sources */ = {isa = PBXBuildFile; fileRef = B27DE0592151765900CC1359 /* MXSession.m */; };
+		B28007C921525D4000D0C3D8 /* UIColor+MX.m in Sources */ = {isa = PBXBuildFile; fileRef = B28007C821525D4000D0C3D8 /* UIColor+MX.m */; };
+		B28007CB21525EE800D0C3D8 /* Colors.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B28007CA21525EE800D0C3D8 /* Colors.xcassets */; };
+		B28007CE2152707000D0C3D8 /* MXSplashViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B28007CD2152707000D0C3D8 /* MXSplashViewController.m */; };
 		B2A481E1215215B5003069D1 /* MXUser.m in Sources */ = {isa = PBXBuildFile; fileRef = B2A481E0215215B5003069D1 /* MXUser.m */; };
+		B2FB579721522ABD00F96524 /* MXRoundedButton.m in Sources */ = {isa = PBXBuildFile; fileRef = B2FB579621522ABD00F96524 /* MXRoundedButton.m */; };
+		B2FB579B21522E0900F96524 /* MXRoundedTextField.m in Sources */ = {isa = PBXBuildFile; fileRef = B2FB579A21522E0900F96524 /* MXRoundedTextField.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		6A4861B48292501AD2338EAC /* libPods-AdressBook.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-AdressBook.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		754BBE928ECA01FE0E4EBD67 /* Pods-AdressBook.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-AdressBook.release.xcconfig"; path = "Pods/Target Support Files/Pods-AdressBook/Pods-AdressBook.release.xcconfig"; sourceTree = "<group>"; };
+		B24DAA042152CEE300E254F7 /* Launch Screen.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = "Launch Screen.storyboard"; sourceTree = "<group>"; };
+		B268DDA021524E9A00AFD142 /* MXLoginViewController+TextFiledDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "MXLoginViewController+TextFiledDelegate.h"; sourceTree = "<group>"; };
+		B268DDA121524E9A00AFD142 /* MXLoginViewController+TextFiledDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "MXLoginViewController+TextFiledDelegate.m"; sourceTree = "<group>"; };
+		B268DDA42152551100AFD142 /* EmployeeListViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = EmployeeListViewController.h; sourceTree = "<group>"; };
+		B268DDA52152551100AFD142 /* EmployeeListViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = EmployeeListViewController.m; sourceTree = "<group>"; };
 		B27DE0382151627600CC1359 /* AddressBook.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = AddressBook.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		B27DE03B2151627600CC1359 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		B27DE03C2151627600CC1359 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
@@ -29,16 +41,24 @@
 		B27DE03F2151627600CC1359 /* MXLoginViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MXLoginViewController.m; sourceTree = "<group>"; };
 		B27DE0422151627600CC1359 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		B27DE0472151627A00CC1359 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
-		B27DE04A2151627A00CC1359 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		B27DE04C2151627A00CC1359 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		B27DE04D2151627A00CC1359 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		B27DE0552151644600CC1359 /* MXNetwork.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MXNetwork.h; sourceTree = "<group>"; };
 		B27DE0562151644600CC1359 /* MXNetwork.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MXNetwork.m; sourceTree = "<group>"; };
 		B27DE0582151765900CC1359 /* MXSession.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MXSession.h; sourceTree = "<group>"; };
 		B27DE0592151765900CC1359 /* MXSession.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MXSession.m; sourceTree = "<group>"; };
+		B28007C621525C4400D0C3D8 /* UIColor+MX.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "UIColor+MX.h"; sourceTree = "<group>"; };
+		B28007C821525D4000D0C3D8 /* UIColor+MX.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "UIColor+MX.m"; sourceTree = "<group>"; };
+		B28007CA21525EE800D0C3D8 /* Colors.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Colors.xcassets; sourceTree = "<group>"; };
+		B28007CC2152707000D0C3D8 /* MXSplashViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MXSplashViewController.h; sourceTree = "<group>"; };
+		B28007CD2152707000D0C3D8 /* MXSplashViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MXSplashViewController.m; sourceTree = "<group>"; };
 		B2A481DF215215B5003069D1 /* MXUser.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MXUser.h; sourceTree = "<group>"; };
 		B2A481E0215215B5003069D1 /* MXUser.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MXUser.m; sourceTree = "<group>"; };
 		B2FB5793215222E300F96524 /* AddressBook.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = AddressBook.entitlements; sourceTree = "<group>"; };
+		B2FB579521522ABD00F96524 /* MXRoundedButton.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MXRoundedButton.h; sourceTree = "<group>"; };
+		B2FB579621522ABD00F96524 /* MXRoundedButton.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MXRoundedButton.m; sourceTree = "<group>"; };
+		B2FB579921522E0900F96524 /* MXRoundedTextField.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MXRoundedTextField.h; sourceTree = "<group>"; };
+		B2FB579A21522E0900F96524 /* MXRoundedTextField.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MXRoundedTextField.m; sourceTree = "<group>"; };
 		FF653B36CE81F923C343EF50 /* Pods-AdressBook.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-AdressBook.debug.xcconfig"; path = "Pods/Target Support Files/Pods-AdressBook/Pods-AdressBook.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -71,6 +91,21 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
+		B268DDA3215254E700AFD142 /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				B27DE03E2151627600CC1359 /* MXLoginViewController.h */,
+				B27DE03F2151627600CC1359 /* MXLoginViewController.m */,
+				B268DDA021524E9A00AFD142 /* MXLoginViewController+TextFiledDelegate.h */,
+				B268DDA121524E9A00AFD142 /* MXLoginViewController+TextFiledDelegate.m */,
+				B268DDA42152551100AFD142 /* EmployeeListViewController.h */,
+				B268DDA52152551100AFD142 /* EmployeeListViewController.m */,
+				B28007CC2152707000D0C3D8 /* MXSplashViewController.h */,
+				B28007CD2152707000D0C3D8 /* MXSplashViewController.m */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
 		B27DE02F2151627600CC1359 = {
 			isa = PBXGroup;
 			children = (
@@ -93,15 +128,17 @@
 			isa = PBXGroup;
 			children = (
 				B2FB5793215222E300F96524 /* AddressBook.entitlements */,
-				B2A481DE215215A9003069D1 /* Models */,
+				B28007C721525C5800D0C3D8 /* Extenssions */,
 				B27DE0542151642300CC1359 /* Session */,
+				B2FB579421522A6C00F96524 /* View */,
+				B2A481DE215215A9003069D1 /* Models */,
+				B268DDA3215254E700AFD142 /* Controller */,
 				B27DE03B2151627600CC1359 /* AppDelegate.h */,
 				B27DE03C2151627600CC1359 /* AppDelegate.m */,
-				B27DE03E2151627600CC1359 /* MXLoginViewController.h */,
-				B27DE03F2151627600CC1359 /* MXLoginViewController.m */,
 				B27DE0412151627600CC1359 /* Main.storyboard */,
+				B24DAA042152CEE300E254F7 /* Launch Screen.storyboard */,
+				B28007CA21525EE800D0C3D8 /* Colors.xcassets */,
 				B27DE0472151627A00CC1359 /* Assets.xcassets */,
-				B27DE0492151627A00CC1359 /* LaunchScreen.storyboard */,
 				B27DE04C2151627A00CC1359 /* Info.plist */,
 				B27DE04D2151627A00CC1359 /* main.m */,
 			);
@@ -119,6 +156,15 @@
 			path = Session;
 			sourceTree = "<group>";
 		};
+		B28007C721525C5800D0C3D8 /* Extenssions */ = {
+			isa = PBXGroup;
+			children = (
+				B28007C621525C4400D0C3D8 /* UIColor+MX.h */,
+				B28007C821525D4000D0C3D8 /* UIColor+MX.m */,
+			);
+			path = Extenssions;
+			sourceTree = "<group>";
+		};
 		B2A481DE215215A9003069D1 /* Models */ = {
 			isa = PBXGroup;
 			children = (
@@ -126,6 +172,17 @@
 				B2A481E0215215B5003069D1 /* MXUser.m */,
 			);
 			path = Models;
+			sourceTree = "<group>";
+		};
+		B2FB579421522A6C00F96524 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				B2FB579521522ABD00F96524 /* MXRoundedButton.h */,
+				B2FB579621522ABD00F96524 /* MXRoundedButton.m */,
+				B2FB579921522E0900F96524 /* MXRoundedTextField.h */,
+				B2FB579A21522E0900F96524 /* MXRoundedTextField.m */,
+			);
+			path = View;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -191,9 +248,10 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				B27DE04B2151627A00CC1359 /* LaunchScreen.storyboard in Resources */,
+				B28007CB21525EE800D0C3D8 /* Colors.xcassets in Resources */,
 				B27DE0482151627A00CC1359 /* Assets.xcassets in Resources */,
 				B27DE0432151627600CC1359 /* Main.storyboard in Resources */,
+				B24DAA052152CEE300E254F7 /* Launch Screen.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -231,9 +289,15 @@
 			files = (
 				B27DE0572151644600CC1359 /* MXNetwork.m in Sources */,
 				B2A481E1215215B5003069D1 /* MXUser.m in Sources */,
+				B28007CE2152707000D0C3D8 /* MXSplashViewController.m in Sources */,
 				B27DE0402151627600CC1359 /* MXLoginViewController.m in Sources */,
+				B28007C921525D4000D0C3D8 /* UIColor+MX.m in Sources */,
 				B27DE04E2151627A00CC1359 /* main.m in Sources */,
+				B2FB579721522ABD00F96524 /* MXRoundedButton.m in Sources */,
+				B268DDA221524E9A00AFD142 /* MXLoginViewController+TextFiledDelegate.m in Sources */,
 				B27DE03D2151627600CC1359 /* AppDelegate.m in Sources */,
+				B2FB579B21522E0900F96524 /* MXRoundedTextField.m in Sources */,
+				B268DDA62152551100AFD142 /* EmployeeListViewController.m in Sources */,
 				B27DE05A2151765900CC1359 /* MXSession.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -247,14 +311,6 @@
 				B27DE0422151627600CC1359 /* Base */,
 			);
 			name = Main.storyboard;
-			sourceTree = "<group>";
-		};
-		B27DE0492151627A00CC1359 /* LaunchScreen.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				B27DE04A2151627A00CC1359 /* Base */,
-			);
-			name = LaunchScreen.storyboard;
 			sourceTree = "<group>";
 		};
 /* End PBXVariantGroup section */

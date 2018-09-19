@@ -6,16 +6,32 @@
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "AddressBook/Session/MXSession.m"
+            timestampString = "559159026.162587"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "45"
+            endingLineNumber = "45"
+            landmarkName = "-loginWithUser:password:"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
             shouldBeEnabled = "Yes"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "AdressBook/Session/MXSession.m"
-            timestampString = "559030554.079748"
+            filePath = "AddressBook/Session/MXNetwork.m"
+            timestampString = "559159026.1628881"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "42"
-            endingLineNumber = "42"
-            landmarkName = "-loginWithUser:password:"
+            startingLineNumber = "58"
+            endingLineNumber = "58"
+            landmarkName = "-loginWithUser:password:completion:"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>

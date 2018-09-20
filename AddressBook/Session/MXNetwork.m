@@ -7,15 +7,13 @@
 //
 
 #import "MXNetwork.h"
+#import "Errors.h"
 
 //Endpoints
 NSString *const baseApi = @"https://contact.taxsee.com/Contacts.svc/";
 NSString *const loginEndpoint = @"Hello";
 NSString *const allDataEndpoint = @"GetAll";
 NSString *const userPhotoEndpoint = @"getWPhoto";
-
-//Errors
-NSString *const MXErrorDomain = @"com.mesrop.addressbookpp";
 
 @interface MXNetwork() {
 }
@@ -35,7 +33,7 @@ NSString *const MXErrorDomain = @"com.mesrop.addressbookpp";
         _session = [NSURLSession sharedSession];
         _loginError = [[NSError alloc] initWithDomain:MXErrorDomain
                                                  code:MXErrorNotLoggedIn
-                                             userInfo: @{NSLocalizedDescriptionKey : @"Ошибка входа"}];
+                                             userInfo: @{NSLocalizedDescriptionKey : kMXErrorNotLoggedInMessege}];
     }
     return self;
 }
@@ -80,14 +78,14 @@ NSString *const MXErrorDomain = @"com.mesrop.addressbookpp";
                  }] resume];
 }
 
-- (void)allUsersData:(NSString *)userName
-            password:(NSString *)password
-          completion:(MXAllDataRequestCompletion)completion {
+- (void)allDataWithUser:(NSString *)userName
+                password:(NSString *)password
+              completion:(MXAllDataRequestCompletion)completion {
     
     NSURLComponents *components = [NSURLComponents componentsWithString:
                                    [baseApi stringByAppendingString: allDataEndpoint]];
-    NSURLQueryItem *user = [NSURLQueryItem queryItemWithName:@"user" value:userName];
-    NSURLQueryItem *pass = [NSURLQueryItem queryItemWithName:@"pass" value:password];
+    NSURLQueryItem *user = [NSURLQueryItem queryItemWithName:@"login" value:userName];
+    NSURLQueryItem *pass = [NSURLQueryItem queryItemWithName:@"password" value:password];
     components.queryItems = @[user, pass];
     
     [[self.session dataTaskWithURL: components.URL

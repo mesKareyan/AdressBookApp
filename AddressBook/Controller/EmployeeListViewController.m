@@ -8,7 +8,7 @@
 
 #import "EmployeeListViewController.h"
 
-@interface EmployeeListViewController ()
+@interface EmployeeListViewController () <MXSessionDataDelegete>
 
 @end
 
@@ -16,12 +16,25 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    self.session.dataDelegate = self;
+    [self.session fetchCompanyData];
 }
 
 - (IBAction)logoutButtonTapped:(UIBarButtonItem *)sender {
     [self.session logout];
     [self dismissViewControllerAnimated:YES completion:nil];
 }
+
+#pragma mak - Data delegate
+
+- (void)sessionDidReciveCompany:(MXCompany *)company {
+    NSLog(@"OK");
+}
+
+- (void)sessionDidReciveError:(NSError *)error {
+    NSLog(@"Error");
+}
+
 
 
 @end

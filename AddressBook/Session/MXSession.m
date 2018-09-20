@@ -8,10 +8,14 @@
 
 #import "MXSession.h"
 #import <UICKeyChainStore/UICKeyChainStore.h>
+#import "MXDataSerializer.h"
+#import "Errors.h"
 
 @interface MXSession()
 
 @property (nonatomic, readwrite) MXUser *user;
+@property (nonatomic, readonly) MXDataSerializer *serializer;
+@property (nonatomic, nonnull, readonly) NSError *companyFetchError;
 
 @end
 
@@ -22,6 +26,11 @@
     self = [super init];
     if (self) {
         _network = [MXNetwork new];
+        _serializer = [MXDataSerializer new];
+        _companyFetchError = [[NSError alloc] initWithDomain:MXErrorDomain
+                                                        code: MXErrorWrongData
+                                                    userInfo: @{NSLocalizedDescriptionKey :
+                                                                    kMXErrorNotLoggedInMessege}];
     }
     return self;
 }
@@ -66,6 +75,28 @@
     keychain[@"password"] = nil;
     keychain[@"user"] = nil;
     [self.delegate sessionDidLogout];
+}
+
+- (void)fetchCompanyData {
+    if (self.user == nil) {
+        return;
+    }
+    [self.network allDataWithUser:self.user.name
+                         password:self.user.password
+                       completion:^(NSDictionary *data, NSError *error) {
+                           if (error) {
+                               [self.dataDelegate sessionDidReciveError:error];
+                               return;
+                           }
+                           MXCompany *company = [self.serializer companyInfoFromData:data];
+                           dispatch_async(dispatch_get_main_queue(), ^{
+                               if (company == nil) {
+                                   [self.dataDelegate sessionDidReciveError:self.companyFetchError];
+                               } else {
+                                   [self.dataDelegate sessionDidReciveCompany:company];
+                               }
+                           });
+                       }];
 }
 
 @end

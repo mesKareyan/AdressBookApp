@@ -16,7 +16,15 @@
 
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
-    // Override point for customization after application launch.
+    self.window.tintColor = [UIColor colorNamed:@"mxLightGreen"];
+    UINavigationBar.appearance.barTintColor = [UIColor colorNamed:@"mxLightGreen"];
+    UINavigationBar.appearance.tintColor = UIColor.whiteColor;
+    UINavigationBar.appearance.titleTextAttributes =
+    @{NSForegroundColorAttributeName : UIColor.whiteColor};
+    [UINavigationBar.appearance setBackgroundImage:[UIImage new]
+                                      forBarPosition:UIBarPositionAny
+                                          barMetrics:UIBarMetricsDefault];
+    UINavigationBar.appearance.shadowImage = [UIImage new];
     return YES;
 }
 

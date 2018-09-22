@@ -6,6 +6,7 @@
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14283.14"/>
+        <capability name="Named colors" minToolsVersion="9.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -18,12 +19,21 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="login_back" translatesAutoresizingMaskIntoConstraints="NO" id="f23-NT-4EV">
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="f23-NT-4EV">
                                 <rect key="frame" x="0.0" y="20" width="375" height="627"/>
+                                <color key="backgroundColor" name="mxLightGreen"/>
                             </imageView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="The Company" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="b4l-Uk-IwB">
+                                <rect key="frame" x="134" y="323" width="107" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <constraints>
+                            <constraint firstItem="b4l-Uk-IwB" firstAttribute="centerY" secondItem="lkW-Sc-jqG" secondAttribute="centerY" id="3fL-rR-4cV"/>
                             <constraint firstAttribute="bottom" secondItem="f23-NT-4EV" secondAttribute="bottom" constant="20" symbolic="YES" id="LEo-EB-Wgn"/>
+                            <constraint firstItem="b4l-Uk-IwB" firstAttribute="centerX" secondItem="lkW-Sc-jqG" secondAttribute="centerX" id="QKZ-GU-iCO"/>
                             <constraint firstItem="f23-NT-4EV" firstAttribute="top" secondItem="lkW-Sc-jqG" secondAttribute="top" constant="20" symbolic="YES" id="Yf7-Te-IvU"/>
                             <constraint firstItem="f23-NT-4EV" firstAttribute="leading" secondItem="23Y-Nc-nDR" secondAttribute="leading" id="a73-qf-Xre"/>
                             <constraint firstItem="f23-NT-4EV" firstAttribute="trailing" secondItem="23Y-Nc-nDR" secondAttribute="trailing" id="dBM-rd-Rp6"/>
@@ -37,6 +47,8 @@
         </scene>
     </scenes>
     <resources>
-        <image name="login_back" width="720" height="1280"/>
+        <namedColor name="mxLightGreen">
+            <color red="0.0" green="0.82352941176470584" blue="0.6588235294117647" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
     </resources>
 </document>

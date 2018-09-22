@@ -1,8 +1,11 @@
+ platform :ios, '9.0'
 
-target 'AdressBook' do
+target 'AddressBook' do
 
-  # Pods for AdressBook
-  pod 'UICKeyChainStore'
-  pod 'SDWebImage', '~> 4.0'
+  # Pods for AddressBook
+ 
+   pod 'UICKeyChainStore'
+   pod 'SDWebImage', '~> 4.0'
+   pod "RATreeView", "~> 2.1.2"
 
 end

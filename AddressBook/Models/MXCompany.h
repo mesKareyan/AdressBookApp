@@ -13,8 +13,10 @@
 
 NS_ASSUME_NONNULL_BEGIN
 
-@interface MXCompany : MXEntity
+@interface MXCompany : NSObject<MXEntity>
 
+@property (nonatomic, readonly) NSString *ID;
+@property (nonatomic, readonly) NSString *Name;
 @property (nonatomic, readonly) NSArray<MXDepartment*> *Departments;
 
 @end

@@ -7,13 +7,16 @@
 //
 
 #import <Foundation/Foundation.h>
+#import "MXEntity.h"
 
 NS_ASSUME_NONNULL_BEGIN
 
-@interface MXEmployee : NSObject
+@interface MXEmployee : NSObject<MXEntity>
 
+@property (nonatomic, readonly) NSString *ID;
+@property (nonatomic, readonly) NSString *Name;
 @property (nonatomic, readonly) NSString *Title;
-@property (nonatomic, readonly) NSString *Rmail;
+@property (nonatomic, readonly) NSString *Email;
 @property (nonatomic, readonly) NSString *Phone;
 
 @end

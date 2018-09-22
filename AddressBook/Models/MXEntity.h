@@ -10,15 +10,12 @@
 
 NS_ASSUME_NONNULL_BEGIN
 
-@interface MXEntity : NSObject
+@protocol MXEntity <NSObject>
 
 @property (nonatomic, readonly) NSString *ID;
 @property (nonatomic, readonly) NSString *Name;
-
+@property (nonatomic, readonly) NSArray  *children;
 - (instancetype)initWithDictionary:(NSDictionary *)dictionary;
-- (instancetype)init NS_UNAVAILABLE;
-+ (instancetype)new  NS_UNAVAILABLE;
-
 
 @end
 

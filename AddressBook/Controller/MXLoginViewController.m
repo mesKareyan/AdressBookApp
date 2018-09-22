@@ -8,7 +8,7 @@
 
 #import "MXLoginViewController.h"
 #import "MXSession.h"
-#import "EmployeeListViewController.h"
+#import "MXEmployeeListViewController.h"
 
 @interface MXLoginViewController () <MXSessionDelegete>
 
@@ -73,9 +73,9 @@
     if ([segue.identifier isEqualToString:@"showEmployees"] &&
         [segue.destinationViewController isKindOfClass:UINavigationController.class]) {
         UINavigationController *navCtrl = segue.destinationViewController;
-        if ([navCtrl.topViewController isKindOfClass:EmployeeListViewController.class]) {
-            EmployeeListViewController *list =
-            (EmployeeListViewController *)[navCtrl topViewController];
+        if ([navCtrl.topViewController isKindOfClass:MXEmployeeListViewController.class]) {
+            MXEmployeeListViewController *list =
+            (MXEmployeeListViewController *)[navCtrl topViewController];
             list.session = self.session;
         }
     }

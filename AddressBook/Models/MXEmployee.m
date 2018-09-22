@@ -10,16 +10,17 @@
 
 @implementation MXEmployee
 
-//-(void)setBar:(id)bar
-//{
-//    if ([bar class] == [NSDictionary class]) {
-//        _bar = [Bar new];
-//        [_bar setValuesForKeysWithDictionary:bar];
-//    }
-//    else
-//    {
-//        _bar = bar;
-//    }
-//}
+- (instancetype)initWithDictionary:(NSDictionary *)dictionary;
+{
+    self = [super init];
+    if (self) {
+        [self setValuesForKeysWithDictionary:dictionary];
+    }
+    return self;
+}
+
+- (NSArray *)children {
+    return nil;
+}
 
 @end

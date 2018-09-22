@@ -11,7 +11,7 @@
 
 NS_ASSUME_NONNULL_BEGIN
 
-@interface EmployeeListViewController : UIViewController
+@interface MXEmployeeListViewController : UIViewController
 
 @property (nonatomic) MXSession *session;
 

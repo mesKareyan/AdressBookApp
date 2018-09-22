@@ -7,20 +7,20 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		64D23560632C5771E2EF6CF9 /* libPods-AdressBook.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 6A4861B48292501AD2338EAC /* libPods-AdressBook.a */; };
+		0728020CAA669DFF73B0D36A /* libPods-AddressBook.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 91ED14553F046EF34D0A71D8 /* libPods-AddressBook.a */; };
 		B24DAA052152CEE300E254F7 /* Launch Screen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B24DAA042152CEE300E254F7 /* Launch Screen.storyboard */; };
 		B24DAA0821541AEE00E254F7 /* MXCompany.m in Sources */ = {isa = PBXBuildFile; fileRef = B24DAA0721541AEE00E254F7 /* MXCompany.m */; };
 		B24DAA0B21541AFD00E254F7 /* MXDepartment.m in Sources */ = {isa = PBXBuildFile; fileRef = B24DAA0A21541AFD00E254F7 /* MXDepartment.m */; };
 		B24DAA0E21541B0D00E254F7 /* MXEmployee.m in Sources */ = {isa = PBXBuildFile; fileRef = B24DAA0D21541B0D00E254F7 /* MXEmployee.m */; };
-		B24DAA1121541D2000E254F7 /* MXEntity.m in Sources */ = {isa = PBXBuildFile; fileRef = B24DAA1021541D2000E254F7 /* MXEntity.m */; };
 		B24DAA142154233200E254F7 /* MXDataSerializer.m in Sources */ = {isa = PBXBuildFile; fileRef = B24DAA132154233200E254F7 /* MXDataSerializer.m */; };
 		B24DAA1721542BB500E254F7 /* Errors.m in Sources */ = {isa = PBXBuildFile; fileRef = B24DAA1621542BB500E254F7 /* Errors.m */; };
+		B24DAA1B21557A1E00E254F7 /* MXEmployeeCell.m in Sources */ = {isa = PBXBuildFile; fileRef = B24DAA1921557A1E00E254F7 /* MXEmployeeCell.m */; };
+		B24DAA1C21557A1E00E254F7 /* MXEmployeeCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = B24DAA1A21557A1E00E254F7 /* MXEmployeeCell.xib */; };
 		B268DDA221524E9A00AFD142 /* MXLoginViewController+TextFiledDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = B268DDA121524E9A00AFD142 /* MXLoginViewController+TextFiledDelegate.m */; };
-		B268DDA62152551100AFD142 /* EmployeeListViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B268DDA52152551100AFD142 /* EmployeeListViewController.m */; };
+		B268DDA62152551100AFD142 /* MXEmployeeListViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B268DDA52152551100AFD142 /* MXEmployeeListViewController.m */; };
 		B27DE03D2151627600CC1359 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = B27DE03C2151627600CC1359 /* AppDelegate.m */; };
 		B27DE0402151627600CC1359 /* MXLoginViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B27DE03F2151627600CC1359 /* MXLoginViewController.m */; };
 		B27DE0432151627600CC1359 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B27DE0412151627600CC1359 /* Main.storyboard */; };
-		B27DE0482151627A00CC1359 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B27DE0472151627A00CC1359 /* Assets.xcassets */; };
 		B27DE04E2151627A00CC1359 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = B27DE04D2151627A00CC1359 /* main.m */; };
 		B27DE0572151644600CC1359 /* MXNetwork.m in Sources */ = {isa = PBXBuildFile; fileRef = B27DE0562151644600CC1359 /* MXNetwork.m */; };
 		B27DE05A2151765900CC1359 /* MXSession.m in Sources */ = {isa = PBXBuildFile; fileRef = B27DE0592151765900CC1359 /* MXSession.m */; };
@@ -28,13 +28,14 @@
 		B28007CB21525EE800D0C3D8 /* Colors.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B28007CA21525EE800D0C3D8 /* Colors.xcassets */; };
 		B28007CE2152707000D0C3D8 /* MXSplashViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B28007CD2152707000D0C3D8 /* MXSplashViewController.m */; };
 		B2A481E1215215B5003069D1 /* MXUser.m in Sources */ = {isa = PBXBuildFile; fileRef = B2A481E0215215B5003069D1 /* MXUser.m */; };
+		B2E2CDFF21560AFE0022CC3E /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B2E2CDFE21560AFE0022CC3E /* Images.xcassets */; };
 		B2FB579721522ABD00F96524 /* MXRoundedButton.m in Sources */ = {isa = PBXBuildFile; fileRef = B2FB579621522ABD00F96524 /* MXRoundedButton.m */; };
 		B2FB579B21522E0900F96524 /* MXRoundedTextField.m in Sources */ = {isa = PBXBuildFile; fileRef = B2FB579A21522E0900F96524 /* MXRoundedTextField.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		6A4861B48292501AD2338EAC /* libPods-AdressBook.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-AdressBook.a"; sourceTree = BUILT_PRODUCTS_DIR; };
-		754BBE928ECA01FE0E4EBD67 /* Pods-AdressBook.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-AdressBook.release.xcconfig"; path = "Pods/Target Support Files/Pods-AdressBook/Pods-AdressBook.release.xcconfig"; sourceTree = "<group>"; };
+		91ED14553F046EF34D0A71D8 /* libPods-AddressBook.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-AddressBook.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		AE3A7CDB4D3FB63C8D4E717E /* Pods-AddressBook.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-AddressBook.debug.xcconfig"; path = "Pods/Target Support Files/Pods-AddressBook/Pods-AddressBook.debug.xcconfig"; sourceTree = "<group>"; };
 		B24DAA042152CEE300E254F7 /* Launch Screen.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = "Launch Screen.storyboard"; sourceTree = "<group>"; };
 		B24DAA0621541AEE00E254F7 /* MXCompany.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MXCompany.h; sourceTree = "<group>"; };
 		B24DAA0721541AEE00E254F7 /* MXCompany.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MXCompany.m; sourceTree = "<group>"; };
@@ -43,22 +44,23 @@
 		B24DAA0C21541B0D00E254F7 /* MXEmployee.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MXEmployee.h; sourceTree = "<group>"; };
 		B24DAA0D21541B0D00E254F7 /* MXEmployee.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MXEmployee.m; sourceTree = "<group>"; };
 		B24DAA0F21541D2000E254F7 /* MXEntity.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MXEntity.h; sourceTree = "<group>"; };
-		B24DAA1021541D2000E254F7 /* MXEntity.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MXEntity.m; sourceTree = "<group>"; };
 		B24DAA122154233200E254F7 /* MXDataSerializer.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MXDataSerializer.h; sourceTree = "<group>"; };
 		B24DAA132154233200E254F7 /* MXDataSerializer.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MXDataSerializer.m; sourceTree = "<group>"; };
 		B24DAA152154257900E254F7 /* Errors.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Errors.h; sourceTree = "<group>"; };
 		B24DAA1621542BB500E254F7 /* Errors.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Errors.m; sourceTree = "<group>"; };
+		B24DAA1821557A1E00E254F7 /* MXEmployeeCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MXEmployeeCell.h; sourceTree = "<group>"; };
+		B24DAA1921557A1E00E254F7 /* MXEmployeeCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MXEmployeeCell.m; sourceTree = "<group>"; };
+		B24DAA1A21557A1E00E254F7 /* MXEmployeeCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MXEmployeeCell.xib; sourceTree = "<group>"; };
 		B268DDA021524E9A00AFD142 /* MXLoginViewController+TextFiledDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "MXLoginViewController+TextFiledDelegate.h"; sourceTree = "<group>"; };
 		B268DDA121524E9A00AFD142 /* MXLoginViewController+TextFiledDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "MXLoginViewController+TextFiledDelegate.m"; sourceTree = "<group>"; };
-		B268DDA42152551100AFD142 /* EmployeeListViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = EmployeeListViewController.h; sourceTree = "<group>"; };
-		B268DDA52152551100AFD142 /* EmployeeListViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = EmployeeListViewController.m; sourceTree = "<group>"; };
+		B268DDA42152551100AFD142 /* MXEmployeeListViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MXEmployeeListViewController.h; sourceTree = "<group>"; };
+		B268DDA52152551100AFD142 /* MXEmployeeListViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MXEmployeeListViewController.m; sourceTree = "<group>"; };
 		B27DE0382151627600CC1359 /* AddressBook.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = AddressBook.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		B27DE03B2151627600CC1359 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		B27DE03C2151627600CC1359 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
 		B27DE03E2151627600CC1359 /* MXLoginViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MXLoginViewController.h; sourceTree = "<group>"; };
 		B27DE03F2151627600CC1359 /* MXLoginViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MXLoginViewController.m; sourceTree = "<group>"; };
 		B27DE0422151627600CC1359 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
-		B27DE0472151627A00CC1359 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		B27DE04C2151627A00CC1359 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		B27DE04D2151627A00CC1359 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		B27DE0552151644600CC1359 /* MXNetwork.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MXNetwork.h; sourceTree = "<group>"; };
@@ -72,12 +74,13 @@
 		B28007CD2152707000D0C3D8 /* MXSplashViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MXSplashViewController.m; sourceTree = "<group>"; };
 		B2A481DF215215B5003069D1 /* MXUser.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MXUser.h; sourceTree = "<group>"; };
 		B2A481E0215215B5003069D1 /* MXUser.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MXUser.m; sourceTree = "<group>"; };
+		B2E2CDFE21560AFE0022CC3E /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		B2FB5793215222E300F96524 /* AddressBook.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = AddressBook.entitlements; sourceTree = "<group>"; };
 		B2FB579521522ABD00F96524 /* MXRoundedButton.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MXRoundedButton.h; sourceTree = "<group>"; };
 		B2FB579621522ABD00F96524 /* MXRoundedButton.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MXRoundedButton.m; sourceTree = "<group>"; };
 		B2FB579921522E0900F96524 /* MXRoundedTextField.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MXRoundedTextField.h; sourceTree = "<group>"; };
 		B2FB579A21522E0900F96524 /* MXRoundedTextField.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MXRoundedTextField.m; sourceTree = "<group>"; };
-		FF653B36CE81F923C343EF50 /* Pods-AdressBook.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-AdressBook.debug.xcconfig"; path = "Pods/Target Support Files/Pods-AdressBook/Pods-AdressBook.debug.xcconfig"; sourceTree = "<group>"; };
+		E12A4A03C3F51866133F8C91 /* Pods-AddressBook.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-AddressBook.release.xcconfig"; path = "Pods/Target Support Files/Pods-AddressBook/Pods-AddressBook.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -85,28 +88,28 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				64D23560632C5771E2EF6CF9 /* libPods-AdressBook.a in Frameworks */,
+				0728020CAA669DFF73B0D36A /* libPods-AddressBook.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		06A6C45F550E76AD99A0A829 /* Pods */ = {
+		2BDAD3AC5691F96B2621CA6E /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				FF653B36CE81F923C343EF50 /* Pods-AdressBook.debug.xcconfig */,
-				754BBE928ECA01FE0E4EBD67 /* Pods-AdressBook.release.xcconfig */,
-			);
-			name = Pods;
-			sourceTree = "<group>";
-		};
-		71E186B9546DBB9D39C568FE /* Frameworks */ = {
-			isa = PBXGroup;
-			children = (
-				6A4861B48292501AD2338EAC /* libPods-AdressBook.a */,
+				91ED14553F046EF34D0A71D8 /* libPods-AddressBook.a */,
 			);
 			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		7490FF485D720F6DB7AE922C /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				AE3A7CDB4D3FB63C8D4E717E /* Pods-AddressBook.debug.xcconfig */,
+				E12A4A03C3F51866133F8C91 /* Pods-AddressBook.release.xcconfig */,
+			);
+			name = Pods;
 			sourceTree = "<group>";
 		};
 		B268DDA3215254E700AFD142 /* Controller */ = {
@@ -116,10 +119,13 @@
 				B27DE03F2151627600CC1359 /* MXLoginViewController.m */,
 				B268DDA021524E9A00AFD142 /* MXLoginViewController+TextFiledDelegate.h */,
 				B268DDA121524E9A00AFD142 /* MXLoginViewController+TextFiledDelegate.m */,
-				B268DDA42152551100AFD142 /* EmployeeListViewController.h */,
-				B268DDA52152551100AFD142 /* EmployeeListViewController.m */,
+				B268DDA42152551100AFD142 /* MXEmployeeListViewController.h */,
+				B268DDA52152551100AFD142 /* MXEmployeeListViewController.m */,
 				B28007CC2152707000D0C3D8 /* MXSplashViewController.h */,
 				B28007CD2152707000D0C3D8 /* MXSplashViewController.m */,
+				B24DAA1821557A1E00E254F7 /* MXEmployeeCell.h */,
+				B24DAA1921557A1E00E254F7 /* MXEmployeeCell.m */,
+				B24DAA1A21557A1E00E254F7 /* MXEmployeeCell.xib */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -129,8 +135,8 @@
 			children = (
 				B27DE03A2151627600CC1359 /* AddressBook */,
 				B27DE0392151627600CC1359 /* Products */,
-				06A6C45F550E76AD99A0A829 /* Pods */,
-				71E186B9546DBB9D39C568FE /* Frameworks */,
+				7490FF485D720F6DB7AE922C /* Pods */,
+				2BDAD3AC5691F96B2621CA6E /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -156,7 +162,7 @@
 				B27DE0412151627600CC1359 /* Main.storyboard */,
 				B24DAA042152CEE300E254F7 /* Launch Screen.storyboard */,
 				B28007CA21525EE800D0C3D8 /* Colors.xcassets */,
-				B27DE0472151627A00CC1359 /* Assets.xcassets */,
+				B2E2CDFE21560AFE0022CC3E /* Images.xcassets */,
 				B27DE04C2151627A00CC1359 /* Info.plist */,
 				B27DE04D2151627A00CC1359 /* main.m */,
 			);
@@ -193,7 +199,6 @@
 				B2A481DF215215B5003069D1 /* MXUser.h */,
 				B2A481E0215215B5003069D1 /* MXUser.m */,
 				B24DAA0F21541D2000E254F7 /* MXEntity.h */,
-				B24DAA1021541D2000E254F7 /* MXEntity.m */,
 				B24DAA0621541AEE00E254F7 /* MXCompany.h */,
 				B24DAA0721541AEE00E254F7 /* MXCompany.m */,
 				B24DAA0921541AFD00E254F7 /* MXDepartment.h */,
@@ -222,7 +227,7 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = B27DE0512151627A00CC1359 /* Build configuration list for PBXNativeTarget "AddressBook" */;
 			buildPhases = (
-				A130CF900489237B70078C76 /* [CP] Check Pods Manifest.lock */,
+				01254C9FBF5295AD823B2D31 /* [CP] Check Pods Manifest.lock */,
 				B27DE0342151627600CC1359 /* Sources */,
 				B27DE0352151627600CC1359 /* Frameworks */,
 				B27DE0362151627600CC1359 /* Resources */,
@@ -279,7 +284,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				B28007CB21525EE800D0C3D8 /* Colors.xcassets in Resources */,
-				B27DE0482151627A00CC1359 /* Assets.xcassets in Resources */,
+				B2E2CDFF21560AFE0022CC3E /* Images.xcassets in Resources */,
+				B24DAA1C21557A1E00E254F7 /* MXEmployeeCell.xib in Resources */,
 				B27DE0432151627600CC1359 /* Main.storyboard in Resources */,
 				B24DAA052152CEE300E254F7 /* Launch Screen.storyboard in Resources */,
 			);
@@ -288,7 +294,7 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
-		A130CF900489237B70078C76 /* [CP] Check Pods Manifest.lock */ = {
+		01254C9FBF5295AD823B2D31 /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -303,7 +309,7 @@
 			outputFileListPaths = (
 			);
 			outputPaths = (
-				"$(DERIVED_FILE_DIR)/Pods-AdressBook-checkManifestLockResult.txt",
+				"$(DERIVED_FILE_DIR)/Pods-AddressBook-checkManifestLockResult.txt",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
@@ -322,16 +328,16 @@
 				B28007CE2152707000D0C3D8 /* MXSplashViewController.m in Sources */,
 				B24DAA0821541AEE00E254F7 /* MXCompany.m in Sources */,
 				B24DAA1721542BB500E254F7 /* Errors.m in Sources */,
+				B24DAA1B21557A1E00E254F7 /* MXEmployeeCell.m in Sources */,
 				B27DE0402151627600CC1359 /* MXLoginViewController.m in Sources */,
 				B28007C921525D4000D0C3D8 /* UIColor+MX.m in Sources */,
 				B27DE04E2151627A00CC1359 /* main.m in Sources */,
-				B24DAA1121541D2000E254F7 /* MXEntity.m in Sources */,
 				B2FB579721522ABD00F96524 /* MXRoundedButton.m in Sources */,
 				B268DDA221524E9A00AFD142 /* MXLoginViewController+TextFiledDelegate.m in Sources */,
 				B24DAA142154233200E254F7 /* MXDataSerializer.m in Sources */,
 				B27DE03D2151627600CC1359 /* AppDelegate.m in Sources */,
 				B2FB579B21522E0900F96524 /* MXRoundedTextField.m in Sources */,
-				B268DDA62152551100AFD142 /* EmployeeListViewController.m in Sources */,
+				B268DDA62152551100AFD142 /* MXEmployeeListViewController.m in Sources */,
 				B24DAA0B21541AFD00E254F7 /* MXDepartment.m in Sources */,
 				B24DAA0E21541B0D00E254F7 /* MXEmployee.m in Sources */,
 				B27DE05A2151765900CC1359 /* MXSession.m in Sources */,
@@ -466,14 +472,14 @@
 		};
 		B27DE0522151627A00CC1359 /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = FF653B36CE81F923C343EF50 /* Pods-AdressBook.debug.xcconfig */;
+			baseConfigurationReference = AE3A7CDB4D3FB63C8D4E717E /* Pods-AddressBook.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_ENTITLEMENTS = AddressBook/AddressBook.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = G7XAPEX3G9;
 				INFOPLIST_FILE = "$(SRCROOT)/AddressBook/Info.plist";
-				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -486,14 +492,14 @@
 		};
 		B27DE0532151627A00CC1359 /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 754BBE928ECA01FE0E4EBD67 /* Pods-AdressBook.release.xcconfig */;
+			baseConfigurationReference = E12A4A03C3F51866133F8C91 /* Pods-AddressBook.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_ENTITLEMENTS = AddressBook/AddressBook.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = G7XAPEX3G9;
 				INFOPLIST_FILE = "$(SRCROOT)/AddressBook/Info.plist";
-				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",

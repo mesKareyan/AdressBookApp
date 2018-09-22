@@ -20,6 +20,8 @@ NSString *const userPhotoEndpoint = @"getWPhoto";
 
 @property (nonatomic, nonnull) NSURLSession *session;
 @property (nonatomic, nonnull, readonly) NSError *loginError;
+@property (nonatomic, nonnull, readonly) NSError *profileFetchError;
+
 
 @end
 
@@ -34,13 +36,16 @@ NSString *const userPhotoEndpoint = @"getWPhoto";
         _loginError = [[NSError alloc] initWithDomain:MXErrorDomain
                                                  code:MXErrorNotLoggedIn
                                              userInfo: @{NSLocalizedDescriptionKey : kMXErrorNotLoggedInMessege}];
+        _profileFetchError = [[NSError alloc] initWithDomain:MXErrorDomain
+                                                        code:MXErrorNotLoggedIn
+                                                    userInfo: @{NSLocalizedDescriptionKey : kMXErrorWrongDataMessege}];
     }
     return self;
 }
 
-- (void)loginWithUser:(NSString *)userName
-             password:(NSString *)password
-           completion:(MXLoginRequestCompletion)completion {
+- (void)signInWithLogin:(NSString *)userName
+               password:(NSString *)password
+             completion:(MXLoginRequestCompletion)completion {
     
     NSURLComponents *components = [NSURLComponents componentsWithString:
                                    [baseApi stringByAppendingString: loginEndpoint]];
@@ -78,9 +83,9 @@ NSString *const userPhotoEndpoint = @"getWPhoto";
                  }] resume];
 }
 
-- (void)allDataWithUser:(NSString *)userName
-                password:(NSString *)password
-              completion:(MXAllDataRequestCompletion)completion {
+- (void)allDataLogin:(NSString *)userName
+            password:(NSString *)password
+          completion:(MXAllDataRequestCompletion)completion {
     
     NSURLComponents *components = [NSURLComponents componentsWithString:
                                    [baseApi stringByAppendingString: allDataEndpoint]];
@@ -113,14 +118,52 @@ NSString *const userPhotoEndpoint = @"getWPhoto";
                  }] resume];
 }
 
-- (NSURL *)photoURLWithID:(NSString *)userID
-                 userName:(NSString *)userName
-                 password:(NSString *)password {
+- (void)employeeDataWithID:(NSString *)employeeID
+                     login:(NSString *)userName
+                  password:(NSString *)password
+                completion:(MXEmployeeDataRequestCompletion)completion {
+    
     NSURLComponents *components = [NSURLComponents componentsWithString:
                                    [baseApi stringByAppendingString: allDataEndpoint]];
+    NSURLQueryItem *user  = [NSURLQueryItem queryItemWithName:@"login" value:userName];
+    NSURLQueryItem *pass  = [NSURLQueryItem queryItemWithName:@"password" value:password];
+    NSURLQueryItem *empID = [NSURLQueryItem queryItemWithName:@"id" value:employeeID];
+    components.queryItems = @[user, pass, empID];
+    
+    [[self.session dataTaskWithURL: components.URL
+                 completionHandler:^(NSData * _Nullable data,
+                                     NSURLResponse * _Nullable response,
+                                     NSError * _Nullable error) {
+                     NSError *jsonError;
+                     id result = [NSJSONSerialization JSONObjectWithData:data
+                                                                 options: kNilOptions
+                                                                   error:&jsonError];
+                     if (jsonError) {
+                         dispatch_async(dispatch_get_main_queue(), ^{
+                             completion(nil, self.profileFetchError);
+                         });
+                         return;
+                     }
+                     if(![result isKindOfClass: NSDictionary.class]) {
+                         dispatch_async(dispatch_get_main_queue(), ^{
+                             completion(nil, self.profileFetchError);
+                         });
+                         return;
+                     }
+                     NSDictionary *resultDict = (NSDictionary *)result;
+                     completion(resultDict, nil);
+                 }] resume];
+}
+
+- (NSURL *)photoURLWithEmployeeID:(NSString *)employeeID
+                            login:(NSString *)userName
+                         password:(NSString *)password {
+    NSURLComponents *components = [NSURLComponents componentsWithString:
+                                   [baseApi stringByAppendingString: userPhotoEndpoint]];
     NSURLQueryItem *user = [NSURLQueryItem queryItemWithName:@"user" value:userName];
     NSURLQueryItem *pass = [NSURLQueryItem queryItemWithName:@"pass" value:password];
-    components.queryItems = @[user, pass];
+    NSURLQueryItem *empID = [NSURLQueryItem queryItemWithName:@"id" value:employeeID];
+    components.queryItems = @[user, pass, empID];
     return components.URL;
 }
 

@@ -50,7 +50,7 @@
 }
 
 - (void)loginWithUser:(NSString *)user password:(NSString *)password {
-    [self.network loginWithUser:user password:password completion:^(NSError *error) {
+    [self.network signInWithLogin:user password:password completion:^(NSError *error) {
         if (error) {
             dispatch_async(dispatch_get_main_queue(), ^{
                 [self.delegate sessionDidFailedLoginWithError:error];
@@ -69,7 +69,7 @@
     }];
 }
 
-- (void)logout{
+- (void)logout {
     UICKeyChainStore *keychain = [UICKeyChainStore
                                   keyChainStoreWithService:@"com.mesropK.AdressBook"];
     keychain[@"password"] = nil;
@@ -81,22 +81,29 @@
     if (self.user == nil) {
         return;
     }
-    [self.network allDataWithUser:self.user.name
-                         password:self.user.password
-                       completion:^(NSDictionary *data, NSError *error) {
-                           if (error) {
-                               [self.dataDelegate sessionDidReciveError:error];
-                               return;
-                           }
-                           MXCompany *company = [self.serializer companyInfoFromData:data];
-                           dispatch_async(dispatch_get_main_queue(), ^{
-                               if (company == nil) {
-                                   [self.dataDelegate sessionDidReciveError:self.companyFetchError];
-                               } else {
-                                   [self.dataDelegate sessionDidReciveCompany:company];
-                               }
-                           });
-                       }];
+    [self.network allDataLogin:self.user.name
+                      password:self.user.password
+                    completion:^(NSDictionary *data, NSError *error) {
+                        if (error) {
+                            [self.dataDelegate sessionDidReciveError:error];
+                            return;
+                        }
+                        MXCompany *company = [self.serializer companyInfoFromData:data];
+                        dispatch_async(dispatch_get_main_queue(), ^{
+                            if (company == nil) {
+                                [self.dataDelegate sessionDidReciveError:self.companyFetchError];
+                            } else {
+                                [self.dataDelegate sessionDidReciveCompany:company];
+                            }
+                        });
+                    }];
 }
+
+- (NSURL *)photoURLForEmployee:(MXEmployee *)employee {
+   return  [self.network photoURLWithEmployeeID:employee.ID
+                                   login:self.user.name
+                                       password:self.user.password];
+}
+
 
 @end

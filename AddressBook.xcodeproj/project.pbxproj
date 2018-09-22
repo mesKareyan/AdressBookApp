@@ -29,6 +29,7 @@
 		B28007CE2152707000D0C3D8 /* MXSplashViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B28007CD2152707000D0C3D8 /* MXSplashViewController.m */; };
 		B2A481E1215215B5003069D1 /* MXUser.m in Sources */ = {isa = PBXBuildFile; fileRef = B2A481E0215215B5003069D1 /* MXUser.m */; };
 		B2E2CDFF21560AFE0022CC3E /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B2E2CDFE21560AFE0022CC3E /* Images.xcassets */; };
+		B2ED5CFE215626E200429F85 /* MXProfileViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B2ED5CFD215626E200429F85 /* MXProfileViewController.m */; };
 		B2FB579721522ABD00F96524 /* MXRoundedButton.m in Sources */ = {isa = PBXBuildFile; fileRef = B2FB579621522ABD00F96524 /* MXRoundedButton.m */; };
 		B2FB579B21522E0900F96524 /* MXRoundedTextField.m in Sources */ = {isa = PBXBuildFile; fileRef = B2FB579A21522E0900F96524 /* MXRoundedTextField.m */; };
 /* End PBXBuildFile section */
@@ -75,6 +76,8 @@
 		B2A481DF215215B5003069D1 /* MXUser.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MXUser.h; sourceTree = "<group>"; };
 		B2A481E0215215B5003069D1 /* MXUser.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MXUser.m; sourceTree = "<group>"; };
 		B2E2CDFE21560AFE0022CC3E /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
+		B2ED5CFC215626E200429F85 /* MXProfileViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MXProfileViewController.h; sourceTree = "<group>"; };
+		B2ED5CFD215626E200429F85 /* MXProfileViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MXProfileViewController.m; sourceTree = "<group>"; };
 		B2FB5793215222E300F96524 /* AddressBook.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = AddressBook.entitlements; sourceTree = "<group>"; };
 		B2FB579521522ABD00F96524 /* MXRoundedButton.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MXRoundedButton.h; sourceTree = "<group>"; };
 		B2FB579621522ABD00F96524 /* MXRoundedButton.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MXRoundedButton.m; sourceTree = "<group>"; };
@@ -123,9 +126,8 @@
 				B268DDA52152551100AFD142 /* MXEmployeeListViewController.m */,
 				B28007CC2152707000D0C3D8 /* MXSplashViewController.h */,
 				B28007CD2152707000D0C3D8 /* MXSplashViewController.m */,
-				B24DAA1821557A1E00E254F7 /* MXEmployeeCell.h */,
-				B24DAA1921557A1E00E254F7 /* MXEmployeeCell.m */,
-				B24DAA1A21557A1E00E254F7 /* MXEmployeeCell.xib */,
+				B2ED5CFC215626E200429F85 /* MXProfileViewController.h */,
+				B2ED5CFD215626E200429F85 /* MXProfileViewController.m */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -212,6 +214,9 @@
 		B2FB579421522A6C00F96524 /* View */ = {
 			isa = PBXGroup;
 			children = (
+				B24DAA1821557A1E00E254F7 /* MXEmployeeCell.h */,
+				B24DAA1921557A1E00E254F7 /* MXEmployeeCell.m */,
+				B24DAA1A21557A1E00E254F7 /* MXEmployeeCell.xib */,
 				B2FB579521522ABD00F96524 /* MXRoundedButton.h */,
 				B2FB579621522ABD00F96524 /* MXRoundedButton.m */,
 				B2FB579921522E0900F96524 /* MXRoundedTextField.h */,
@@ -336,6 +341,7 @@
 				B268DDA221524E9A00AFD142 /* MXLoginViewController+TextFiledDelegate.m in Sources */,
 				B24DAA142154233200E254F7 /* MXDataSerializer.m in Sources */,
 				B27DE03D2151627600CC1359 /* AppDelegate.m in Sources */,
+				B2ED5CFE215626E200429F85 /* MXProfileViewController.m in Sources */,
 				B2FB579B21522E0900F96524 /* MXRoundedTextField.m in Sources */,
 				B268DDA62152551100AFD142 /* MXEmployeeListViewController.m in Sources */,
 				B24DAA0B21541AFD00E254F7 /* MXDepartment.m in Sources */,

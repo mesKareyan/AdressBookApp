@@ -11,6 +11,13 @@
 #import "MXDepartment.h"
 #import "MXEmployee.h"
 
+@interface MXEmployeeCell()
+
+@property (weak, nonatomic) IBOutlet NSLayoutConstraint *leadingConstraint;
+
+
+@end
+
 @implementation MXEmployeeCell
 
 - (void)awakeFromNib {
@@ -26,29 +33,37 @@
     self.backgroundColor = deselectedColor;
     self.detailLabel.textColor = deselectedTextColor;
     self.titleLabel.textColor = deselectedTextColor;
-    
     NSInteger numberOfChildren = [entity.children count];
+    
     NSString *entityType;
     if ([entity isKindOfClass: MXCompany.class]) {
-        entityType = @"Department";
+        entityType = @"Departments";
         self.backgroundColor = [UIColor colorNamed:@"mxLightGreen"];
         self.detailLabel.textColor = selectedTextColor;
         self.titleLabel.textColor = selectedTextColor;
+        self.detailLabel.text =
+        [NSString stringWithFormat:@"%@, %ld", entityType, numberOfChildren];
     } else if([entity isKindOfClass: MXDepartment.class]) {
         NSString *colorName = [NSString stringWithFormat: @"selectedLevel%ld", (long)level];
         UIColor *color = [UIColor colorNamed:colorName];
         self.backgroundColor = color != nil ? color : deselectedColor;
         MXDepartment *department = (MXDepartment *)entity;
-        entityType = department.Departments == nil ? @"Employees" : @"Departments";
+        entityType =
+        department.Departments == nil ? @"Employees" : @"Departments";
+        self.detailLabel.text =
+        [NSString stringWithFormat:@"%@, %ld", entityType, numberOfChildren];
         self.detailLabel.textColor = selectedTextColor;
         self.titleLabel.textColor = selectedTextColor;
+    } else if([entity isKindOfClass: MXEmployee.class]) {
+        MXEmployee *emp = (MXEmployee *)entity;
+        self.detailLabel.text = emp.Title;
     }
-    NSString *detailText =
-    [NSString localizedStringWithFormat:@"Number of %@ %@", entityType, [@(numberOfChildren) stringValue]];
+    
     self.titleLabel.text = entity.Name;
-    self.detailLabel.text = detailText;
     
     CGFloat left = 11 + 20 * level;
+    
+    self.leadingConstraint.constant = left;
     
     CGRect titleFrame = self.titleLabel.frame;
     titleFrame.origin.x = left;

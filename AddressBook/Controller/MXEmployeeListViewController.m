@@ -7,13 +7,16 @@
 //
 
 #import "MXEmployeeListViewController.h"
-#import "MXEmployeeCell.h"
 #import <RATreeView.h>
+#import "MXEmployeeCell.h"
+#import "MXEmployee.h"
+#import "MXProfileViewController.h"
 
 @interface MXEmployeeListViewController () <MXSessionDataDelegete, RATreeViewDelegate, RATreeViewDataSource>
 
 @property (weak, nonatomic) RATreeView *treeView;
 @property (weak, nonatomic) MXCompany *company;
+@property (nonatomic) MXEmployee *selectedEmployee;
 
 @end
 
@@ -28,6 +31,8 @@
 
 - (void)setupTreeView {
     
+    UIColor *backColor = [UIColor colorNamed:@"mxLightGreen"];
+    
     RATreeView *treeView = [[RATreeView alloc] initWithFrame:self.view.bounds];
     
     treeView.delegate = self;
@@ -37,8 +42,10 @@
     
     UIRefreshControl *refreshControl = [UIRefreshControl new];
     [refreshControl addTarget:self action:@selector(refreshControlChanged:) forControlEvents:UIControlEventValueChanged];
+    refreshControl.tintColor = UIColor.whiteColor;
     [treeView.scrollView addSubview:refreshControl];
-    
+    refreshControl.backgroundColor = backColor;
+
     [treeView reloadData];
     [treeView setBackgroundColor:[UIColor colorWithWhite:0.97 alpha:1.0]];
     
@@ -46,6 +53,16 @@
     self.treeView.frame = self.view.bounds;
     self.treeView.autoresizingMask = UIViewAutoresizingFlexibleWidth | UIViewAutoresizingFlexibleHeight;
     [self.view insertSubview:treeView atIndex:0];
+    
+    // Creating view for extending background color
+    CGRect frame = self.treeView.bounds;
+    frame.origin.y = -frame.size.height;
+    UIView* bgView = [[UIView alloc] initWithFrame:frame];
+    bgView.autoresizingMask = UIViewAutoresizingFlexibleWidth;
+    // Adding the view below the refresh control
+    [treeView.scrollView insertSubview:bgView atIndex:0];
+    bgView.backgroundColor = backColor;
+
     
     [self.navigationController setNavigationBarHidden:NO];
     self.navigationItem.title = NSLocalizedString(@"The company", nil);
@@ -150,4 +167,18 @@
     return 70;
 }
 
+-(void)treeView:(RATreeView *)treeView didSelectRowForItem:(id)item {
+    if ([item isKindOfClass:MXEmployee.class]) {
+        self.selectedEmployee = item;
+        [self performSegueWithIdentifier:@"showProfile" sender:nil];
+    }
+}
+
+- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
+    if ([segue.identifier isEqualToString:@"showProfile"]) {
+        MXProfileViewController *profileController = (MXProfileViewController *)segue.destinationViewController;
+        [profileController setupForEmployee:self.selectedEmployee
+                                withSession:self.session];
+    }
+}
 @end

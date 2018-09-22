@@ -12,4 +12,4 @@
 //Errors
 NSString *const MXErrorDomain = @"com.mesrop.addressbookpp";
 NSString *const kMXErrorNotLoggedInMessege = @"Ошибка входа";
-NSString *const kMXErrorWrongDataMessge = @"Ошибка при получении данных";
+NSString *const kMXErrorWrongDataMessege = @"Ошибка при получении данных";

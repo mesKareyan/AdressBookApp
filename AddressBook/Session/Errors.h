@@ -19,7 +19,7 @@ typedef NS_ENUM(NSUInteger, MXError) {
 };
 
 FOUNDATION_EXPORT NSString *const kMXErrorNotLoggedInMessege;
-FOUNDATION_EXPORT NSString *const kMXErrorWrongDataMessge;
+FOUNDATION_EXPORT NSString *const kMXErrorWrongDataMessege;
 
 
 

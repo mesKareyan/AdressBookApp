@@ -10,6 +10,7 @@
 #import "MXNetwork.h"
 #import "MXUser.h"
 #import "MXCompany.h"
+#import "MXEmployee.h"
 
 @protocol MXSessionDelegete <NSObject>
 
@@ -39,6 +40,7 @@ NS_ASSUME_NONNULL_BEGIN
 - (void)loginWithUser:(MXUser *)user;
 - (void)logout;
 - (void)fetchCompanyData;
+- (NSURL *)photoURLForEmployee:(MXEmployee *)employee;
 
 @end
 

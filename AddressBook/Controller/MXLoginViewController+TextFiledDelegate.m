@@ -29,14 +29,20 @@
 }
 
 - (BOOL)textField:(UITextField *)textField shouldChangeCharactersInRange:(NSRange)range replacementString:(NSString *)string {
-//    NSString *newString = [textField.text stringByReplacingCharactersInRange:range withString:string];
-    self.loginButton.mxActive = [self validateUser];
+    NSString *newString = [textField.text stringByReplacingCharactersInRange:range withString:string];
+    BOOL isValid = NO;
+    if (textField == self.loginTextField) {
+        isValid = [self validateLogin:newString password:self.passwordTextField.text];
+    } else if (textField == self.passwordTextField) {
+         isValid = [self validateLogin:self.loginTextField.text password:newString];
+    }
+    self.loginButton.mxActive = isValid;
     return YES;
 }
 
-- (BOOL)validateUser {
-    if(![self.loginTextField.text isEqualToString: @""] &&
-       ![self.passwordTextField.text isEqualToString:@""]) {
+- (BOOL)validateLogin:(NSString *)login password:(NSString *)password {
+    if(![login isEqualToString: @""] &&
+       ![password isEqualToString:@""]) {
         return YES;
     }
     return NO;

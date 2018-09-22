@@ -56,7 +56,12 @@
     self.phoneNumberLabel.text = self.employee.Phone;
     self.detailsTextView.text = self.employee.Title;
     NSURL *url = [self.session photoURLForEmployee:self.employee];
-    [self.self.profileImageView sd_setImageWithURL: url placeholderImage:[UIImage imageNamed:@"email"]];
+    [self.profileImageView sd_setImageWithURL:url];
+    
+    if (!self.employee.Phone || [self.employee.Phone isEqualToString:@""]) {
+        self.phoneButton.enabled = NO;
+    }
+    
 }
 
 #pragma mark - Actions
@@ -74,7 +79,9 @@
         MFMailComposeViewController *mailCont = [[MFMailComposeViewController alloc] init];
         mailCont.mailComposeDelegate = self;
         [mailCont setSubject:@"The Copmany"];
-        [mailCont setToRecipients: @[self.employee.Email]];
+        if (self.employee.Email) {
+            [mailCont setToRecipients: @[self.employee.Email]];
+        }
         [self presentViewController:mailCont animated:YES completion:nil];
     }
 }

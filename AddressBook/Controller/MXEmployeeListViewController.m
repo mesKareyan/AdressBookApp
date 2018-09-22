@@ -63,9 +63,8 @@
     [treeView.scrollView insertSubview:bgView atIndex:0];
     bgView.backgroundColor = backColor;
 
-    
     [self.navigationController setNavigationBarHidden:NO];
-    self.navigationItem.title = NSLocalizedString(@"The company", nil);
+    self.navigationItem.title = NSLocalizedString(@"The Company", nil);
     
     [self.treeView registerNib:[UINib nibWithNibName:NSStringFromClass([MXEmployeeCell class]) bundle:nil] forCellReuseIdentifier:NSStringFromClass([MXEmployeeCell class])];
 }
@@ -76,41 +75,33 @@
 
 - (void)showLogoutAlert {
     UIAlertController *alert =
-    [UIAlertController alertControllerWithTitle:@"Logout?"
-                                        message:@"Are you sure"
+    [UIAlertController alertControllerWithTitle:NSLocalizedString(@"Logout?", "")
+                                        message:NSLocalizedString(@"Are you sure?", "")
                                  preferredStyle:UIAlertControllerStyleAlert];
-    [alert addAction:[UIAlertAction actionWithTitle:@"Logout" style:UIAlertActionStyleDestructive handler:^(UIAlertAction * _Nonnull action) {
+    [alert addAction:[UIAlertAction actionWithTitle:NSLocalizedString(@"Logout", "")
+                                              style:UIAlertActionStyleDestructive handler:^(UIAlertAction * _Nonnull action) {
         [self.session logout];
         [self dismissViewControllerAnimated:YES completion:nil];
     }]];
-    [alert addAction:[UIAlertAction actionWithTitle:@"Cancel" style:UIAlertActionStyleDefault handler:nil]];
+    [alert addAction:[UIAlertAction actionWithTitle:NSLocalizedString(@"Cancel", "") style:UIAlertActionStyleDefault handler:nil]];
     [self presentViewController:alert animated:YES completion:nil];
 }
 
 #pragma mak - Data delegate
 
 - (void)sessionDidReciveCompany:(MXCompany *)company {
-    NSLog(@"OK");
     self.company = company;
     [self.treeView reloadData];
 }
 
 - (void)sessionDidReciveError:(NSError *)error {
     NSLog(@"Error");
+    NSLog(error.localizedDescription);
 }
 
 - (void)viewWillAppear:(BOOL)animated
 {
     [super viewWillAppear:animated];
-    
-    int systemVersion = [[[[UIDevice currentDevice] systemVersion] componentsSeparatedByString:@"."][0] intValue];
-    if (systemVersion >= 7 && systemVersion < 8) {
-        CGRect statusBarViewRect = [[UIApplication sharedApplication] statusBarFrame];
-        float heightPadding = statusBarViewRect.size.height+self.navigationController.navigationBar.frame.size.height;
-        self.treeView.scrollView.contentInset = UIEdgeInsetsMake(heightPadding, 0.0, 0.0, 0.0);
-        self.treeView.scrollView.contentOffset = CGPointMake(0.0, -heightPadding);
-    }
-    
     self.treeView.frame = self.view.bounds;
 }
 

@@ -14,10 +14,10 @@
             buildForArchiving = "YES">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "021A8CEB8E8A5F0B272D25D7409692F5"
-               BlueprintName = "Pods-AdressBook"
+               BlueprintIdentifier = "44D40FF88995AC28EDF969E971A07CEE"
+               BlueprintName = "RATreeView"
                ReferencedContainer = "container:Pods.xcodeproj"
-               BuildableName = "libPods-AdressBook.a">
+               BuildableName = "libRATreeView.a">
             </BuildableReference>
          </BuildActionEntry>
       </BuildActionEntries>

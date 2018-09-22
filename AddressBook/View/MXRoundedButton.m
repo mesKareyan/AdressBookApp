@@ -29,8 +29,9 @@
 
 - (void)setMxActive:(BOOL)mxActive {
     self.enabled = mxActive;
+    self.alpha = mxActive ? 1 : 0.6;
     self.backgroundColor =
-    mxActive ? UIColor.mxGreen : UIColor.lightGrayColor;
+    mxActive ? UIColor.whiteColor : [UIColor colorNamed:@"selectedLevel1"];
 }
 
 

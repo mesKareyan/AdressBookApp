@@ -33,7 +33,7 @@
 }
 
 - (void)setupController {
-    self.loginButton.enabled = NO;
+    self.loginButton.mxActive = NO;
     self.loginTextField.delegate = (id<UITextFieldDelegate>)self;
     self.passwordTextField.delegate =  (id<UITextFieldDelegate>)self;
     [self.view addGestureRecognizer: [[UITapGestureRecognizer alloc]
@@ -55,6 +55,7 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     [self setupController];
+    self.loginButton.alpha = 0.6;
 }
 
 - (void)viewWillAppear:(BOOL)animated {

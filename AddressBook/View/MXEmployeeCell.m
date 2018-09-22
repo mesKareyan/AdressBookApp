@@ -37,12 +37,12 @@
     
     NSString *entityType;
     if ([entity isKindOfClass: MXCompany.class]) {
-        entityType = @"Departments";
+        entityType = NSLocalizedString(@"Departments","");
         self.backgroundColor = [UIColor colorNamed:@"mxLightGreen"];
         self.detailLabel.textColor = selectedTextColor;
         self.titleLabel.textColor = selectedTextColor;
         self.detailLabel.text =
-        [NSString stringWithFormat:@"%@, %ld", entityType, numberOfChildren];
+        [NSString stringWithFormat:@"%@ - %ld", entityType, numberOfChildren];
     } else if([entity isKindOfClass: MXDepartment.class]) {
         NSString *colorName = [NSString stringWithFormat: @"selectedLevel%ld", (long)level];
         UIColor *color = [UIColor colorNamed:colorName];
@@ -51,7 +51,7 @@
         entityType =
         department.Departments == nil ? @"Employees" : @"Departments";
         self.detailLabel.text =
-        [NSString stringWithFormat:@"%@, %ld", entityType, numberOfChildren];
+        [NSString stringWithFormat:@"%@ - %ld", NSLocalizedString(entityType, ""), numberOfChildren];
         self.detailLabel.textColor = selectedTextColor;
         self.titleLabel.textColor = selectedTextColor;
     } else if([entity isKindOfClass: MXEmployee.class]) {

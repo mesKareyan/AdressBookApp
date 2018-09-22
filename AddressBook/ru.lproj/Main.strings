@@ -1,0 +1,21 @@
+
+/* Class = "UILabel"; text = "Label"; ObjectID = "BlO-lH-JmB"; */
+"BlO-lH-JmB.text" = "Label";
+
+/* Class = "UIButton"; normalTitle = "Вход "; ObjectID = "KRX-Kj-aOh"; */
+"KRX-Kj-aOh.normalTitle" = "Вход ";
+
+/* Class = "UITextField"; placeholder = "Введите логин"; ObjectID = "LiR-R7-Ums"; */
+"LiR-R7-Ums.placeholder" = "Введите логин";
+
+/* Class = "UILabel"; text = "Label"; ObjectID = "QeJ-HE-Uwg"; */
+"QeJ-HE-Uwg.text" = "Label";
+
+/* Class = "UILabel"; text = "Добро пожаловать"; ObjectID = "X5h-bO-6ft"; */
+"X5h-bO-6ft.text" = "Добро пожаловать";
+
+/* Class = "UITextField"; placeholder = "Введите пароль"; ObjectID = "ci4-IX-gg0"; */
+"ci4-IX-gg0.placeholder" = "Введите пароль";
+
+/* Class = "UILabel"; text = "Добро пожаловать"; ObjectID = "mhD-uz-i44"; */
+"mhD-uz-i44.text" = "Добро пожаловать";

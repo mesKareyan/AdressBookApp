@@ -19,10 +19,6 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="f23-NT-4EV">
-                                <rect key="frame" x="0.0" y="20" width="375" height="627"/>
-                                <color key="backgroundColor" name="mxLightGreen"/>
-                            </imageView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Welcome" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="b4l-Uk-IwB">
                                 <rect key="frame" x="152" y="323" width="71" height="21"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
@@ -30,13 +26,10 @@
                                 <nil key="highlightedColor"/>
                             </label>
                         </subviews>
+                        <color key="backgroundColor" name="mxLightGreen"/>
                         <constraints>
                             <constraint firstItem="b4l-Uk-IwB" firstAttribute="centerY" secondItem="lkW-Sc-jqG" secondAttribute="centerY" id="3fL-rR-4cV"/>
-                            <constraint firstAttribute="bottom" secondItem="f23-NT-4EV" secondAttribute="bottom" constant="20" symbolic="YES" id="LEo-EB-Wgn"/>
                             <constraint firstItem="b4l-Uk-IwB" firstAttribute="centerX" secondItem="lkW-Sc-jqG" secondAttribute="centerX" id="QKZ-GU-iCO"/>
-                            <constraint firstItem="f23-NT-4EV" firstAttribute="top" secondItem="lkW-Sc-jqG" secondAttribute="top" constant="20" symbolic="YES" id="Yf7-Te-IvU"/>
-                            <constraint firstItem="f23-NT-4EV" firstAttribute="leading" secondItem="23Y-Nc-nDR" secondAttribute="leading" id="a73-qf-Xre"/>
-                            <constraint firstItem="f23-NT-4EV" firstAttribute="trailing" secondItem="23Y-Nc-nDR" secondAttribute="trailing" id="dBM-rd-Rp6"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="23Y-Nc-nDR"/>
                     </view>

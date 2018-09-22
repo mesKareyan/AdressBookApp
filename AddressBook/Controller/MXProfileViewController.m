@@ -11,7 +11,7 @@
 #import <MessageUI/MessageUI.h>
 #import <SDWebImage/UIImageView+WebCache.h>
 
-@interface MXProfileViewController () <MFMailComposeViewControllerDelegate>
+@interface MXProfileViewController () <MFMailComposeViewControllerDelegate, UIScrollViewDelegate>
 
 @property (weak, nonatomic) IBOutlet UIImageView *profileImage;
 @property (weak, nonatomic) IBOutlet UILabel *nameLabel;
@@ -24,6 +24,10 @@
 @property (nonatomic, readwrite) MXSession *session;
 @property (nonatomic) UIImageView *profileImageView;
 
+@property (nonatomic) CGFloat imageViewHeight;
+@property (nonatomic, getter=isFullscreenProfileImage) BOOL fullscreenProfileImage;
+
+
 @end
 
 @implementation MXProfileViewController
@@ -31,6 +35,8 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     [self setupUI];
+    self.imageViewHeight = self.profileImage.frame.size.height;
+    self.fullscreenProfileImage = NO;
 }
 
 - (void)setupForEmployee:(MXEmployee *)employee
@@ -43,15 +49,16 @@
     
     // Creating view for extending background color
     CGRect frame = self.tableView.tableHeaderView.bounds;
-    frame.size.height += 60;
-    frame.origin.y = -60;
     self.profileImageView = [[UIImageView alloc] initWithFrame:frame];
     self.profileImageView.autoresizingMask = UIViewAutoresizingFlexibleWidth;
     self.profileImageView.contentMode = UIViewContentModeScaleAspectFill;
     self.profileImageView.clipsToBounds = YES;
+    self.profileImageView.userInteractionEnabled = YES;
+    UITapGestureRecognizer *tap = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(profileImageTapped:)];
+    [self.profileImageView addGestureRecognizer: tap];
     // Adding the view below the refresh control
-    [self.view insertSubview:self.profileImageView belowSubview:self.tableView];
-    
+    [self.tableView insertSubview:self.profileImageView atIndex:3];
+   
     self.nameLabel.text = self.employee.Name;
     self.phoneNumberLabel.text = self.employee.Phone;
     self.detailsTextView.text = self.employee.Title;
@@ -61,7 +68,7 @@
     if (!self.employee.Phone || [self.employee.Phone isEqualToString:@""]) {
         self.phoneButton.enabled = NO;
     }
-    
+    ((UIScrollView *)self.tableView).delegate = self;
 }
 
 #pragma mark - Actions
@@ -72,6 +79,22 @@
 
 - (IBAction)phoneButtonTapped:(UIButton *)sender {
     [self makeCall];
+}
+     
+- (void)profileImageTapped:(UITapGestureRecognizer*)tap {
+    [self showProfileImageFullscreen: !self.isFullscreenProfileImage];
+}
+
+- (void)showProfileImageFullscreen:(BOOL)isFullscreen {
+    [self.navigationController setNavigationBarHidden:isFullscreen animated:YES];
+    [UIView animateWithDuration:0.4 animations:^{
+        if (self.isFullscreenProfileImage) {
+            self.profileImageView.frame = self.profileImage.frame;
+        } else {
+            self.profileImageView.frame = self.view.frame;
+        }}];
+    self.fullscreenProfileImage = isFullscreen;
+    self.tableView.scrollEnabled = !isFullscreen;
 }
 
 - (void)sendEmail {
@@ -114,4 +137,22 @@
         NSLog(@"Uou");
     }];
 }
+
+#pragma - mark ScrollViewDelegate
+
+- (void)scrollViewDidScroll:(UIScrollView *)scrollView {
+    if (scrollView != self.tableView) {
+        return;
+    }
+//    if (self.isFullscreenProfileImage) {
+//        [self showProfileImageFullscreen:NO];
+//    }
+    CGRect newFrame = self.profileImageView.frame;
+    CGFloat offset = scrollView.contentOffset.y;
+    CGFloat newHeight = self.imageViewHeight - offset;;
+    newFrame.origin.y = offset;
+    newFrame.size.height = newHeight;
+    self.profileImageView.frame = newFrame;
+}
+
 @end

@@ -87,6 +87,10 @@
     [self presentViewController:alert animated:YES completion:nil];
 }
 
+- (BOOL)treeView:(RATreeView *)treeView canEditRowForItem:(id)item {
+    return NO;
+}
+
 #pragma mak - Data delegate
 
 - (void)sessionDidReciveCompany:(MXCompany *)company {
@@ -127,11 +131,6 @@
     NSInteger level = [self.treeView levelForCellForItem:item];
     BOOL expanded = [self.treeView isCellForItemExpanded:item];
     [cell setupWithEntity:dataObject withLevel:level isExpanded:expanded];
-    
-    cell.preservesSuperviewLayoutMargins = NO;
-    cell.separatorInset = UIEdgeInsetsZero;
-    cell.layoutMargins = UIEdgeInsetsZero;
-    cell.selectionStyle = UITableViewCellSelectionStyleNone;
     
     return cell;
 }

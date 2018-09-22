@@ -9,9 +9,9 @@
 /* Begin PBXBuildFile section */
 		0728020CAA669DFF73B0D36A /* libPods-AddressBook.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 91ED14553F046EF34D0A71D8 /* libPods-AddressBook.a */; };
 		B218AFC8215661F800C4D64D /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = B218AFC6215661F800C4D64D /* Localizable.strings */; };
-		B218AFCA2156624D00C4D64D /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B218AFCC2156624D00C4D64D /* Main.storyboard */; };
 		B218AFD6215677F100C4D64D /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = B218AFD4215677F100C4D64D /* InfoPlist.strings */; };
 		B218AFD821567DDF00C4D64D /* Launch Screen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B218AFDA21567DDF00C4D64D /* Launch Screen.storyboard */; };
+		B218AFDF21575BC600C4D64D /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B218AFE121575BC600C4D64D /* Main.storyboard */; };
 		B24DAA0821541AEE00E254F7 /* MXCompany.m in Sources */ = {isa = PBXBuildFile; fileRef = B24DAA0721541AEE00E254F7 /* MXCompany.m */; };
 		B24DAA0B21541AFD00E254F7 /* MXDepartment.m in Sources */ = {isa = PBXBuildFile; fileRef = B24DAA0A21541AFD00E254F7 /* MXDepartment.m */; };
 		B24DAA0E21541B0D00E254F7 /* MXEmployee.m in Sources */ = {isa = PBXBuildFile; fileRef = B24DAA0D21541B0D00E254F7 /* MXEmployee.m */; };
@@ -41,12 +41,12 @@
 		AE3A7CDB4D3FB63C8D4E717E /* Pods-AddressBook.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-AddressBook.debug.xcconfig"; path = "Pods/Target Support Files/Pods-AddressBook/Pods-AddressBook.debug.xcconfig"; sourceTree = "<group>"; };
 		B218AFC7215661F800C4D64D /* Base */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = Base; path = Base.lproj/Localizable.strings; sourceTree = "<group>"; };
 		B218AFC92156623F00C4D64D /* ru */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ru; path = ru.lproj/Localizable.strings; sourceTree = "<group>"; };
-		B218AFCB2156624D00C4D64D /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
-		B218AFCE2156625700C4D64D /* ru */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ru; path = ru.lproj/Main.strings; sourceTree = "<group>"; };
 		B218AFD5215677F100C4D64D /* Base */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = Base; path = Base.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		B218AFD7215677FC00C4D64D /* ru */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ru; path = ru.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		B218AFD921567DDF00C4D64D /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = "Base.lproj/Launch Screen.storyboard"; sourceTree = "<group>"; };
 		B218AFDC21567DE200C4D64D /* ru */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ru; path = "ru.lproj/Launch Screen.strings"; sourceTree = "<group>"; };
+		B218AFE021575BC600C4D64D /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		B218AFE321575BCC00C4D64D /* ru */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ru; path = ru.lproj/Main.strings; sourceTree = "<group>"; };
 		B24DAA0621541AEE00E254F7 /* MXCompany.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MXCompany.h; sourceTree = "<group>"; };
 		B24DAA0721541AEE00E254F7 /* MXCompany.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MXCompany.m; sourceTree = "<group>"; };
 		B24DAA0921541AFD00E254F7 /* MXDepartment.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MXDepartment.h; sourceTree = "<group>"; };
@@ -169,7 +169,7 @@
 				B268DDA3215254E700AFD142 /* Controller */,
 				B27DE03B2151627600CC1359 /* AppDelegate.h */,
 				B27DE03C2151627600CC1359 /* AppDelegate.m */,
-				B218AFCC2156624D00C4D64D /* Main.storyboard */,
+				B218AFE121575BC600C4D64D /* Main.storyboard */,
 				B218AFDA21567DDF00C4D64D /* Launch Screen.storyboard */,
 				B28007CA21525EE800D0C3D8 /* Colors.xcassets */,
 				B2E2CDFE21560AFE0022CC3E /* Images.xcassets */,
@@ -301,7 +301,7 @@
 			files = (
 				B28007CB21525EE800D0C3D8 /* Colors.xcassets in Resources */,
 				B218AFD6215677F100C4D64D /* InfoPlist.strings in Resources */,
-				B218AFCA2156624D00C4D64D /* Main.storyboard in Resources */,
+				B218AFDF21575BC600C4D64D /* Main.storyboard in Resources */,
 				B218AFC8215661F800C4D64D /* Localizable.strings in Resources */,
 				B2E2CDFF21560AFE0022CC3E /* Images.xcassets in Resources */,
 				B24DAA1C21557A1E00E254F7 /* MXEmployeeCell.xib in Resources */,
@@ -375,16 +375,6 @@
 			name = Localizable.strings;
 			sourceTree = "<group>";
 		};
-		B218AFCC2156624D00C4D64D /* Main.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				B218AFCB2156624D00C4D64D /* Base */,
-				B218AFCE2156625700C4D64D /* ru */,
-			);
-			name = Main.storyboard;
-			path = ../../../.Trash;
-			sourceTree = "<group>";
-		};
 		B218AFD4215677F100C4D64D /* InfoPlist.strings */ = {
 			isa = PBXVariantGroup;
 			children = (
@@ -401,6 +391,15 @@
 				B218AFDC21567DE200C4D64D /* ru */,
 			);
 			name = "Launch Screen.storyboard";
+			sourceTree = "<group>";
+		};
+		B218AFE121575BC600C4D64D /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				B218AFE021575BC600C4D64D /* Base */,
+				B218AFE321575BCC00C4D64D /* ru */,
+			);
+			name = Main.storyboard;
 			sourceTree = "<group>";
 		};
 /* End PBXVariantGroup section */

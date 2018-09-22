@@ -26,6 +26,11 @@
 
 - (void)setupWithEntity:(id<MXEntity>)entity withLevel:(NSInteger)level isExpanded:(BOOL)expanded {
     
+    self.preservesSuperviewLayoutMargins = NO;
+    self.separatorInset = UIEdgeInsetsZero;
+    self.layoutMargins = UIEdgeInsetsZero;
+    self.selectionStyle = UITableViewCellSelectionStyleNone;
+    
     UIColor *selectedTextColor = [UIColor whiteColor];
     UIColor *deselectedTextColor = [UIColor blackColor];
     UIColor *deselectedColor = [UIColor colorNamed:@"deselected"];
@@ -35,6 +40,8 @@
     self.titleLabel.textColor = deselectedTextColor;
     NSInteger numberOfChildren = [entity.children count];
     
+    self.accessoryType = UITableViewCellAccessoryNone;
+
     NSString *entityType;
     if ([entity isKindOfClass: MXCompany.class]) {
         entityType = NSLocalizedString(@"Departments","");
@@ -43,6 +50,7 @@
         self.titleLabel.textColor = selectedTextColor;
         self.detailLabel.text =
         [NSString stringWithFormat:@"%@ - %ld", entityType, numberOfChildren];
+        self.accessoryType = UITableViewCellAccessoryDisclosureIndicator;
     } else if([entity isKindOfClass: MXDepartment.class]) {
         NSString *colorName = [NSString stringWithFormat: @"selectedLevel%ld", (long)level];
         UIColor *color = [UIColor colorNamed:colorName];

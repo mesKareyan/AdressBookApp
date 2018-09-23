@@ -22,6 +22,4 @@ FOUNDATION_EXPORT NSString *const kMXErrorNotLoggedInMessege;
 FOUNDATION_EXPORT NSString *const kMXErrorWrongDataMessege;
 
 
-
-
 #endif /* Errors_h */

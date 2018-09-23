@@ -15,7 +15,6 @@
 
 @property (weak, nonatomic) IBOutlet NSLayoutConstraint *leadingConstraint;
 
-
 @end
 
 @implementation MXEmployeeCell
@@ -30,7 +29,8 @@
     self.separatorInset = UIEdgeInsetsZero;
     self.layoutMargins = UIEdgeInsetsZero;
     self.selectionStyle = UITableViewCellSelectionStyleNone;
-    
+    self.accessoryType = UITableViewCellAccessoryNone;
+
     UIColor *selectedTextColor = [UIColor whiteColor];
     UIColor *deselectedTextColor = [UIColor blackColor];
     UIColor *deselectedColor = [UIColor colorNamed:@"deselected"];
@@ -40,8 +40,6 @@
     self.titleLabel.textColor = deselectedTextColor;
     NSInteger numberOfChildren = [entity.children count];
     
-    self.accessoryType = UITableViewCellAccessoryNone;
-
     NSString *entityType;
     if ([entity isKindOfClass: MXCompany.class]) {
         entityType = NSLocalizedString(@"Departments","");
@@ -68,18 +66,9 @@
     }
     
     self.titleLabel.text = entity.Name;
-    
     CGFloat left = 11 + 20 * level;
-    
     self.leadingConstraint.constant = left;
-    
-    CGRect titleFrame = self.titleLabel.frame;
-    titleFrame.origin.x = left;
-    self.titleLabel.frame = titleFrame;
-    
-    CGRect detailsFrame = self.detailLabel.frame;
-    detailsFrame.origin.x = left;
-    self.detailLabel.frame = detailsFrame;
+
 }
 
 @end

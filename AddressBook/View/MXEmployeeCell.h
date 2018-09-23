@@ -12,9 +12,9 @@
 NS_ASSUME_NONNULL_BEGIN
 
 @interface MXEmployeeCell : UITableViewCell
+
 @property (weak, nonatomic) IBOutlet UILabel *titleLabel;
 @property (weak, nonatomic) IBOutlet UILabel *detailLabel;
-
 
 - (void)setupWithEntity:(id<MXEntity>)entity withLevel:(NSInteger)level isExpanded:(BOOL) expanded;
 @end

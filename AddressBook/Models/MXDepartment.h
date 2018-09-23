@@ -20,7 +20,6 @@ NS_ASSUME_NONNULL_BEGIN
 @property (nonatomic, readonly) NSArray<MXEmployee*> *Employees;
 @property (nonatomic, readonly) NSArray<MXDepartment*> *Departments;
 
-
 @end
 
 NS_ASSUME_NONNULL_END

@@ -19,7 +19,6 @@
 @property (weak, nonatomic) IBOutlet UILabel *welcomeLabel;
 @property (weak, nonatomic) IBOutlet UIScrollView *scrollView;
 
-
 @end
 
 @implementation MXLoginViewController
@@ -32,30 +31,11 @@
     return _session;
 }
 
-- (void)setupController {
-    self.loginButton.mxActive = NO;
-    self.loginTextField.delegate = (id<UITextFieldDelegate>)self;
-    self.passwordTextField.delegate =  (id<UITextFieldDelegate>)self;
-    [self.view addGestureRecognizer: [[UITapGestureRecognizer alloc]
-                                      initWithTarget:self action:@selector(dismissKeyboard)]];
-    MXUser *user = [[MXUser alloc] initWithName:@"test_user" password:@"test_pass"];
-    MXUser *savedUser = [self.session savedUser];
-    if (savedUser) {
-        self.itemsStackView.hidden = YES;
-        [self.session loginWithUser:user];
-    } else {
-        dispatch_async(dispatch_get_main_queue(), ^{
-            [self animteItems];
-        });
-    }
-}
-
-#pragma mark - Lifecicle
+#pragma mark - Lifecycle
 
 - (void)viewDidLoad {
     [super viewDidLoad];
     [self setupController];
-    self.loginButton.alpha = 0.6;
 }
 
 - (void)viewWillAppear:(BOOL)animated {
@@ -82,12 +62,28 @@
     }
 }
 
+#pragma mark - Initialization
+
+- (void)setupController {
+    self.loginButton.alpha = 0.6;
+    self.loginButton.mxActive = NO;
+    self.loginTextField.delegate = (id<UITextFieldDelegate>)self;
+    self.passwordTextField.delegate =  (id<UITextFieldDelegate>)self;
+    [self.view addGestureRecognizer: [[UITapGestureRecognizer alloc]
+                                      initWithTarget:self action:@selector(dismissKeyboard)]];
+    MXUser *user = [[MXUser alloc] initWithName:@"test_user" password:@"test_pass"];
+    MXUser *savedUser = [self.session savedUser];
+    if (savedUser) {
+        self.itemsStackView.hidden = YES;
+        [self.session loginWithUser:user];
+    } else {
+        dispatch_async(dispatch_get_main_queue(), ^{
+            [self animteItems];
+        });
+    }
+}
 
 #pragma mark - Actions
-
-- (void)showEmployeesList {
-    
-}
 
 - (IBAction)loginButtonTapped:(MXRoundedButton *)sender {
     MXUser *newUser = [[MXUser alloc] initWithName:self.loginTextField.text password:self.passwordTextField.text];
@@ -96,11 +92,9 @@
     [self.view endEditing:YES];
 }
 
-
 -(void)dismissKeyboard {
     [self.view endEditing:YES];
 }
-
 
 #pragma mark - MXSession Delegate
 
@@ -110,7 +104,12 @@
 }
 
 - (void)sessionDidLoggedIn {
-    [self performSegueWithIdentifier:@"showEmployees" sender:nil];
+    [UIView animateWithDuration:0.5 animations:^{
+        self.view.backgroundColor = UIColor.whiteColor;
+    } completion:^(BOOL finished) {
+        self.view.backgroundColor = [UIColor colorNamed:@"mxLightGreen"];
+        [self performSegueWithIdentifier:@"showEmployees" sender:nil];
+    }];
 }
 
 - (void)sessionDidLogout {
@@ -126,8 +125,7 @@
     [self presentViewController:alert animated:YES completion:nil];
 }
 
-
-#pragma mark - keyboard
+#pragma mark - Keyboard
 
 - (void)subscribeKeyboardNotifications
 {
@@ -151,7 +149,6 @@
                                                   object:nil];
 }
 
-#pragma mark - keyboard movements
 - (void)keyboardWillShow:(NSNotification *)notification {
     CGSize keyboardSize = [[[notification userInfo] objectForKey:UIKeyboardFrameBeginUserInfoKey] CGRectValue].size;
         [UIView animateWithDuration:0.3 animations:^{
@@ -169,6 +166,7 @@
     }];
 }
 
+#pragma mark - Animations
 - (void)animteItems {
     
     CGRect  frame = self.bottomContainerVIew.frame;
@@ -196,7 +194,7 @@
     [UIView animateWithDuration: 1.5 delay:0 options:UIViewAnimationOptionCurveEaseOut animations:^{
         self.loginButton.alpha = 1.0;
     } completion:nil];
-    
 
 }
+
 @end

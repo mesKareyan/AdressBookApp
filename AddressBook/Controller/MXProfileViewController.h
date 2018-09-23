@@ -17,7 +17,6 @@ NS_ASSUME_NONNULL_BEGIN
 @property (nonatomic, readonly) MXEmployee *employee;
 @property (nonatomic, readonly) MXSession *session;
 
-
 - (void)setupForEmployee:(MXEmployee *)employee withSession:(MXSession *)session;
 
 @end

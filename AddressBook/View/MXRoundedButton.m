@@ -12,7 +12,6 @@
 @interface MXRoundedButton()
 @end
 
-
 @implementation MXRoundedButton
 
 - (void)setCornerRadius:(CGFloat)cornerRadius {
@@ -33,7 +32,6 @@
     self.backgroundColor =
     mxActive ? UIColor.whiteColor : [UIColor colorNamed:@"selectedLevel1"];
 }
-
 
 
 @end

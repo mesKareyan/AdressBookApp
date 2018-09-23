@@ -13,7 +13,6 @@ typedef void(^MXLoginRequestCompletion)(NSError *error);
 typedef void(^MXAllDataRequestCompletion)(NSDictionary *data, NSError *error);
 typedef void(^MXEmployeeDataRequestCompletion)(NSDictionary *data, NSError *error);
 
-
 NS_ASSUME_NONNULL_BEGIN
 
 @interface MXNetwork : NSObject

@@ -29,8 +29,7 @@
         _serializer = [MXDataSerializer new];
         _companyFetchError = [[NSError alloc] initWithDomain:MXErrorDomain
                                                         code: MXErrorWrongData
-                                                    userInfo: @{NSLocalizedDescriptionKey :
-                                                                    kMXErrorNotLoggedInMessege}];
+        userInfo: @{NSLocalizedDescriptionKey : NSLocalizedString(kMXErrorNotLoggedInMessege, "")}];
     }
     return self;
 }

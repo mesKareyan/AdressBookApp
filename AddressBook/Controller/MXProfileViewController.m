@@ -13,31 +13,32 @@
 
 @interface MXProfileViewController () <MFMailComposeViewControllerDelegate, UIScrollViewDelegate>
 
-@property (weak, nonatomic) IBOutlet UIImageView *profileImage;
+@property (weak, nonatomic) IBOutlet UIImageView *profilePlaceholderImageView;
 @property (weak, nonatomic) IBOutlet UILabel *nameLabel;
 @property (weak, nonatomic) IBOutlet UILabel *phoneNumberLabel;
 @property (weak, nonatomic) IBOutlet MXRoundedButton *emailButton;
 @property (weak, nonatomic) IBOutlet MXRoundedButton *phoneButton;
 @property (weak, nonatomic) IBOutlet UITextView *detailsTextView;
-
-@property (nonatomic, readwrite) MXEmployee *employee;
-@property (nonatomic, readwrite) MXSession *session;
 @property (nonatomic) UIImageView *profileImageView;
 
 @property (nonatomic) CGFloat imageViewHeight;
 @property (nonatomic, getter=isFullscreenProfileImage) BOOL fullscreenProfileImage;
 
+@property (nonatomic, readwrite) MXEmployee *employee;
+@property (nonatomic, readwrite) MXSession *session;
 
 @end
 
 @implementation MXProfileViewController
 
+#pragma mark - Lifecycle
+
 - (void)viewDidLoad {
     [super viewDidLoad];
     [self setupUI];
-    self.imageViewHeight = self.profileImage.frame.size.height;
-    self.fullscreenProfileImage = NO;
 }
+
+#pragma mark - Initialization
 
 - (void)setupForEmployee:(MXEmployee *)employee
              withSession:(MXSession *)session {
@@ -46,7 +47,8 @@
 }
 
 - (void)setupUI {
-    
+    self.imageViewHeight = self.profilePlaceholderImageView.frame.size.height;
+    self.fullscreenProfileImage = NO;
     // Creating view for extending background color
     CGRect frame = self.tableView.tableHeaderView.bounds;
     self.profileImageView = [[UIImageView alloc] initWithFrame:frame];
@@ -85,18 +87,6 @@
     [self showProfileImageFullscreen: !self.isFullscreenProfileImage];
 }
 
-- (void)showProfileImageFullscreen:(BOOL)isFullscreen {
-    [self.navigationController setNavigationBarHidden:isFullscreen animated:YES];
-    [UIView animateWithDuration:0.4 animations:^{
-        if (self.isFullscreenProfileImage) {
-            self.profileImageView.frame = self.profileImage.frame;
-        } else {
-            self.profileImageView.frame = self.view.frame;
-        }}];
-    self.fullscreenProfileImage = isFullscreen;
-    self.tableView.scrollEnabled = !isFullscreen;
-}
-
 - (void)sendEmail {
     if([MFMailComposeViewController canSendMail]) {
         MFMailComposeViewController *mailCont = [[MFMailComposeViewController alloc] init];
@@ -109,8 +99,31 @@
     }
 }
 
-- (void)mailComposeController:(MFMailComposeViewController *)controller didFinishWithResult:(MFMailComposeResult)result error:(NSError *)error
-{
+- (void)makeCall {
+    NSURL *url = [NSURL URLWithString: [@"tel://" stringByAppendingString:self.employee.Phone]];
+    UIApplication *application = [UIApplication sharedApplication];
+    if ([application canOpenURL:url]) {
+        [application openURL:url options:@{} completionHandler:nil];
+    }
+}
+
+#pragma mark - Animations
+
+- (void)showProfileImageFullscreen:(BOOL)isFullscreen {
+    [self.navigationController setNavigationBarHidden:isFullscreen animated:YES];
+    [UIView animateWithDuration:0.4 animations:^{
+        if (self.isFullscreenProfileImage) {
+            self.profileImageView.frame = self.profilePlaceholderImageView.frame;
+        } else {
+            self.profileImageView.frame = self.view.frame;
+        }}];
+    self.fullscreenProfileImage = isFullscreen;
+    self.tableView.scrollEnabled = !isFullscreen;
+}
+
+#pragma mark - Email delegate
+
+- (void)mailComposeController:(MFMailComposeViewController *)controller didFinishWithResult:(MFMailComposeResult)result error:(NSError *)error {
     switch (result) {
         case MFMailComposeResultSent:
             //Email sent
@@ -131,22 +144,12 @@
     [self dismissViewControllerAnimated:YES completion:nil];
 }
 
-- (void)makeCall {
-    NSString *phoneNumber = [@"tel://" stringByAppendingString:self.employee.Phone];
-    [[UIApplication sharedApplication] openURL:[NSURL URLWithString:phoneNumber] options:0 completionHandler:^(BOOL success) {
-        NSLog(@"Uou");
-    }];
-}
-
-#pragma - mark ScrollViewDelegate
+#pragma  mark - ScrollViewDelegate
 
 - (void)scrollViewDidScroll:(UIScrollView *)scrollView {
     if (scrollView != self.tableView) {
         return;
     }
-//    if (self.isFullscreenProfileImage) {
-//        [self showProfileImageFullscreen:NO];
-//    }
     CGRect newFrame = self.profileImageView.frame;
     CGFloat offset = scrollView.contentOffset.y;
     CGFloat newHeight = self.imageViewHeight - offset;;

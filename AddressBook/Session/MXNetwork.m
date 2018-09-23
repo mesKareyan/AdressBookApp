@@ -15,30 +15,26 @@ NSString *const loginEndpoint = @"Hello";
 NSString *const allDataEndpoint = @"GetAll";
 NSString *const userPhotoEndpoint = @"getWPhoto";
 
-@interface MXNetwork() {
-}
+@interface MXNetwork()
 
 @property (nonatomic, nonnull) NSURLSession *session;
 @property (nonatomic, nonnull, readonly) NSError *loginError;
 @property (nonatomic, nonnull, readonly) NSError *profileFetchError;
 
-
 @end
-
 
 @implementation MXNetwork
 
-- (instancetype)init
-{
+- (instancetype)init {
     self = [super init];
     if (self) {
         _session = [NSURLSession sharedSession];
         _loginError = [[NSError alloc] initWithDomain:MXErrorDomain
                                                  code:MXErrorNotLoggedIn
-                                             userInfo: @{NSLocalizedDescriptionKey : kMXErrorNotLoggedInMessege}];
+                userInfo: @{NSLocalizedDescriptionKey : NSLocalizedString(kMXErrorNotLoggedInMessege,"")}];
         _profileFetchError = [[NSError alloc] initWithDomain:MXErrorDomain
                                                         code:MXErrorNotLoggedIn
-                                                    userInfo: @{NSLocalizedDescriptionKey : kMXErrorWrongDataMessege}];
+                userInfo: @{NSLocalizedDescriptionKey : NSLocalizedString(kMXErrorWrongDataMessege,"")}];
     }
     return self;
 }
@@ -171,7 +167,7 @@ NSString *const userPhotoEndpoint = @"getWPhoto";
 
 - (NSError *)loginErrorWithMessesge:(NSString *)messege {
     if (messege == nil) {
-        messege = @"Ошибка входа";
+        messege = NSLocalizedString(kMXErrorNotLoggedInMessege, "");
     }
     return  [NSError errorWithDomain:MXErrorDomain
                                 code:MXErrorNotLoggedIn

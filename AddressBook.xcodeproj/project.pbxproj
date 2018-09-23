@@ -44,9 +44,10 @@
 		B218AFD5215677F100C4D64D /* Base */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = Base; path = Base.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		B218AFD7215677FC00C4D64D /* ru */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ru; path = ru.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		B218AFD921567DDF00C4D64D /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = "Base.lproj/Launch Screen.storyboard"; sourceTree = "<group>"; };
-		B218AFDC21567DE200C4D64D /* ru */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ru; path = "ru.lproj/Launch Screen.strings"; sourceTree = "<group>"; };
 		B218AFE021575BC600C4D64D /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		B218AFE321575BCC00C4D64D /* ru */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ru; path = ru.lproj/Main.strings; sourceTree = "<group>"; };
+		B218AFE62157610900C4D64D /* ru */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ru; path = "ru.lproj/Launch Screen.strings"; sourceTree = "<group>"; };
+		B218AFE82157658E00C4D64D /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = "en.lproj/Launch Screen.strings"; sourceTree = "<group>"; };
 		B24DAA0621541AEE00E254F7 /* MXCompany.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MXCompany.h; sourceTree = "<group>"; };
 		B24DAA0721541AEE00E254F7 /* MXCompany.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MXCompany.m; sourceTree = "<group>"; };
 		B24DAA0921541AFD00E254F7 /* MXDepartment.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MXDepartment.h; sourceTree = "<group>"; };
@@ -123,6 +124,19 @@
 			name = Pods;
 			sourceTree = "<group>";
 		};
+		B218AFE421575F8400C4D64D /* SupportingFiles */ = {
+			isa = PBXGroup;
+			children = (
+				B27DE03B2151627600CC1359 /* AppDelegate.h */,
+				B27DE03C2151627600CC1359 /* AppDelegate.m */,
+				B27DE04C2151627A00CC1359 /* Info.plist */,
+				B27DE04D2151627A00CC1359 /* main.m */,
+				B218AFC6215661F800C4D64D /* Localizable.strings */,
+				B218AFD4215677F100C4D64D /* InfoPlist.strings */,
+			);
+			name = SupportingFiles;
+			sourceTree = "<group>";
+		};
 		B268DDA3215254E700AFD142 /* Controller */ = {
 			isa = PBXGroup;
 			children = (
@@ -164,19 +178,12 @@
 				B2FB5793215222E300F96524 /* AddressBook.entitlements */,
 				B28007C721525C5800D0C3D8 /* Extenssions */,
 				B27DE0542151642300CC1359 /* Session */,
-				B2FB579421522A6C00F96524 /* View */,
 				B2A481DE215215A9003069D1 /* Models */,
+				B2FB579421522A6C00F96524 /* View */,
 				B268DDA3215254E700AFD142 /* Controller */,
-				B27DE03B2151627600CC1359 /* AppDelegate.h */,
-				B27DE03C2151627600CC1359 /* AppDelegate.m */,
-				B218AFE121575BC600C4D64D /* Main.storyboard */,
-				B218AFDA21567DDF00C4D64D /* Launch Screen.storyboard */,
+				B218AFE421575F8400C4D64D /* SupportingFiles */,
 				B28007CA21525EE800D0C3D8 /* Colors.xcassets */,
 				B2E2CDFE21560AFE0022CC3E /* Images.xcassets */,
-				B27DE04C2151627A00CC1359 /* Info.plist */,
-				B27DE04D2151627A00CC1359 /* main.m */,
-				B218AFC6215661F800C4D64D /* Localizable.strings */,
-				B218AFD4215677F100C4D64D /* InfoPlist.strings */,
 			);
 			path = AddressBook;
 			sourceTree = "<group>";
@@ -231,6 +238,8 @@
 				B2FB579621522ABD00F96524 /* MXRoundedButton.m */,
 				B2FB579921522E0900F96524 /* MXRoundedTextField.h */,
 				B2FB579A21522E0900F96524 /* MXRoundedTextField.m */,
+				B218AFE121575BC600C4D64D /* Main.storyboard */,
+				B218AFDA21567DDF00C4D64D /* Launch Screen.storyboard */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -388,7 +397,8 @@
 			isa = PBXVariantGroup;
 			children = (
 				B218AFD921567DDF00C4D64D /* Base */,
-				B218AFDC21567DE200C4D64D /* ru */,
+				B218AFE62157610900C4D64D /* ru */,
+				B218AFE82157658E00C4D64D /* en */,
 			);
 			name = "Launch Screen.storyboard";
 			sourceTree = "<group>";
